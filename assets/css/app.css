@@ -1,0 +1,53 @@
+
+.pizoteTableID{
+    width: 50px !important;
+}
+
+
+.pizote_spinner {
+
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) url('../images/portoadmin/loader.gif') 50% 50% no-repeat;
+    background-size: 20% !important;
+}
+
+.notificationScroll{
+    max-height:400px;overflow:hidden; overflow-y:scroll;
+}
+
+/*DATATABLES CUSTOM*/
+/*
+.dataTables_filter {
+    display: none;
+}
+
+/*TEMPORAL*/
+.dataTables_filter {
+    left: -50px;
+    position: relative;
+}
+
+
+/* Move tfoot in the upper part of the table */
+.dt_tfoot {
+    display: table-header-group;
+}
+/*DATATABLES CUSTOM*/
+
+
+.hide {
+    display: none !important;
+}
+.show {
+    display: block !important;
+}
+
+
+
+

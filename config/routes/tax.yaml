@@ -1,0 +1,34 @@
+tax_index:
+    path:     /tax
+    controller: App\Controller\TaxController::indexAction
+    methods:  GET
+
+tax_show:
+    path:     tax/{id}/show
+    controller: App\Controller\TaxController::showAction
+    methods:  GET
+
+tax_new:
+    path:     tax/new
+    controller: App\Controller\TaxController::newAction
+    #methods:  [GET, POST]
+    
+tax_create:
+    path:     tax/create
+    controller: App\Controller\TaxController::createAction
+    methods:  [GET, POST]
+
+tax_edit:
+    path:     tax/{id}/edit
+    controller: App\Controller\TaxController::editAction
+    #methods:  [GET, POST]
+    
+tax_update:
+    path:     tax/{id}/update
+    controller: App\Controller\TaxController::updateAction
+    methods:  [PUT, POST]
+
+tax_delete:
+    path:     tax/{id}/delete
+    controller: App\Controller\TaxController::deleteAction
+    #methods:  DELETE

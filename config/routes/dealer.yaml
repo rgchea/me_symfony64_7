@@ -1,0 +1,38 @@
+dealer_index:
+    path:     /dealer
+    controller: App\Controller\DealerController::indexAction
+    methods:  GET
+
+dealer_show:
+    path:     dealer/{id}/show
+    controller: App\Controller\DealerController::showAction
+    methods:  GET
+
+dealer_new:
+    path:     dealer/new
+    controller: App\Controller\DealerController::newAction
+#    methods:  [GET, POST]
+    
+dealer_create:
+    path:     dealer/create
+    controller: App\Controller\DealerController::createAction
+    methods:  [GET, POST]
+
+dealer_edit:
+    path:     dealer/{id}/edit
+    controller: App\Controller\DealerController::editAction
+#    methods:  [GET, POST]
+    
+dealer_update:
+    path:     dealer/{id}/update
+    controller: App\Controller\DealerController::updateAction
+    methods:  [PUT, POST]
+
+dealer_delete:
+    path:     dealer/{id}/delete
+    controller: App\Controller\DealerController::deleteAction
+#    methods:  DELETE
+
+dealer_enable:
+    path:     dealer/{id}/enable
+    controller: App\Controller\DealerController::enableAction

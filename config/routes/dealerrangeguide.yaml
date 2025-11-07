@@ -1,0 +1,35 @@
+dealerrangeguide_index:
+    path:     /dealerrangeguide
+    controller: App\Controller\DealerRangeGuideController::indexAction
+    methods:  GET
+
+dealerrangeguide_show:
+    path:     dealerrangeguide/{id}/show
+    controller: App\Controller\DealerRangeGuideController::showAction
+    methods:  GET
+
+dealerrangeguide_new:
+    path:     dealerrangeguide/new
+    controller: App\Controller\DealerRangeGuideController::newAction
+#    methods:  [GET, POST]
+
+dealerrangeguide_create:
+    path:     dealerrangeguide/create
+    controller: App\Controller\DealerRangeGuideController::createAction
+    methods:  [GET, POST]
+
+dealerrangeguide_edit:
+    path:     dealerrangeguide/{id}/edit
+    controller: App\Controller\DealerRangeGuideController::editAction
+#    methods:  [GET, POST]
+
+dealerrangeguide_update:
+    path:     dealerrangeguide/{id}/update
+    controller: App\Controller\DealerRangeGuideController::updateAction
+    methods:  [PUT, POST]
+
+
+dealerrangeguide_delete:
+    path:     dealerrangeguide/{id}/delete
+    controller: App\Controller\DealerRangeGuideController::deleteAction
+#    methods:  DELETE

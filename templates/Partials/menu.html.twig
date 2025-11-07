@@ -1,0 +1,62 @@
+<div class="header-nav collapse">
+    <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1">
+        <nav>
+            <ul class="nav nav-pills" id="mainNav">
+
+                {% for module in user_access %}
+
+                {% if(module.moduleType == 'link') %}
+
+                    {% if(module.visible == 1) %}
+
+                        <li  {{app.session.get('item') == module.systemName ? 'class="active"' : '' }} >
+                            <a class="nav-link" href="{{ path(module.systemRoute)}}">
+                                {% if module.icon is null %}
+                                    {#<i class="fas fa-dot-circle"></i>#}
+                                {% else %}
+                                    {{ module.icon | raw }}
+                                    {#<img style="width:20px" src="{{asset(module.icon)}}">#}
+                                {% endif %}
+                                {{ module.moduleName }}
+                            </a>
+                        </li>
+                    {% endif %}
+
+                {% elseif(module.moduleType == 'menu') %}
+
+                    <li class="dropdown">{#nav-expanded nav-active#}
+                        <a class="nav-link dropdown-toggle">
+                            {% if module.icon is null %}
+                                {#<i class="fas fa-dot-circle"></i>#}
+                            {% else %}
+                                {{ module.icon | raw }}
+                                {#<i class="fas fa-columns" ></i>Ingreso de datos</a>#}
+                            {% endif %}
+                            {{ module.moduleName }}
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            {% for submenu in module %}
+                                {% if submenu is iterable %}
+                                    <li class="nav-link" id="{{submenu.systemName}}" {{app.session.get('item') == submenu.systemName ? 'class="nav-active"' : '' }} >
+                                        <a href="{{ path(submenu.systemRoute) }}">{{submenu.moduleName}}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+
+                        </ul>
+                    </li>
+
+                {%else%}
+
+
+                {% endif %}
+            {% endfor %}
+
+
+            </ul>
+
+        </nav>
+    </div>
+</div>
+

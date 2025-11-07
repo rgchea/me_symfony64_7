@@ -1,0 +1,114 @@
+
+	<header role="heading">
+		<h2>Reclamo #{{ entity.id }}</h2>
+
+
+	</header>
+
+	<!-- widget div-->
+	<div role="content">
+
+		<!-- widget edit box -->
+		<div class="jarviswidget-editbox">
+			<!-- This area used as dropdown edit box -->
+
+		</div>
+		<!-- end widget edit box -->
+
+		<!-- widget content -->
+		<div class="widget-body">
+
+			{{ form_start(form) }}
+			{{ form_errors(form) }}
+
+				<fieldset>
+					<div class="form-group col-md-3"><b>Guía #{{ guide.code }}</b></div>
+					<br/>
+					<div class="clearfix"></div>
+					<div class="form-group col-md-12">
+						<label>RECLAMO</label><br/>
+						{{ entity.claim }}
+					</div>
+					<div class="clearfix"></div>
+
+					<div class="form-group col-md-3">
+						{{ form_label(form.claimType) }}
+						{{ form_errors(form.claimType) }}
+						{{ form_widget(form.claimType, { 'attr': {'class' : 'form-control' } }
+						) }}
+					</div>
+
+
+					<br/>
+					<div class="clearfix"></div>
+
+					<div class="form-group col-md-3">
+						{{ form_label(form.replacement) }}
+						{{ form_errors(form.replacement) }}
+						{{ form_widget(form.replacement, { 'attr': {'class' : '' } }
+						) }}
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-group col-md-3">
+						{{ form_label(form.productPurchase) }}
+						{{ form_errors(form.productPurchase) }}
+						{{ form_widget(form.productPurchase, { 'attr': {'class' : '' } }
+						) }}
+					</div>
+					<div class="clearfix"></div>
+
+					<div class="form-group col-md-3">
+						{{ form_label(form.productPurchaseAmount) }}
+						{{ form_errors(form.productPurchaseAmount) }}
+						{{ form_widget(form.productPurchaseAmount, { 'attr': {'class' : 'form-control' } }
+						) }}
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-group col-md-3">
+						{{ form_label(form.status) }}
+						{{ form_errors(form.status) }}
+						{{ form_widget(form.status, { 'attr': {'class' : 'form-control' } }
+						) }}
+					</div>
+					<div class="clearfix"></div>
+
+					<div class="form-group col-md-6">
+						{{ form_label(form.observation) }}
+						{{ form_errors(form.observation) }}
+						{{ form_widget(form.observation, { 'attr': {'class' : 'form-control' } }
+						) }}
+					</div>
+
+				<div class="hide">
+					{{ form_rest(form) }}
+				</div>
+
+				</fieldset>
+				<br/>
+				<div class="clearfix"></div>
+
+				<div class="form-actions">
+					<a href="{{ path('backend_admin_claim_index') }}" class="btn btn-danger"> Cancelar </a>
+
+					<button class="btn btn-primary">
+						Guardar
+					</button>
+				</div>
+
+			<!--</form>-->
+			{{ form_end(form) }}
+
+		</div>
+		<!-- end widget content -->
+
+	</div>
+	<!-- end widget div -->
+
+<script type="text/javascript" language="Javascript">
+
+	$("[name='backend_adminbundle_claim']").validate();
+
+	$("#backend_adminbundle_claim_productPurchaseAmount").rules("add", {number:true, min:0});
+
+
+</script>

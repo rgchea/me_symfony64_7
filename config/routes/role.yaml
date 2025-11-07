@@ -1,0 +1,42 @@
+backend_admin_role_index:
+  path:     /role
+  controller: App\Controller\RoleController::indexAction
+
+backend_admin_role_show:
+  path:     role/{id}/show
+  controller: App\Controller\RoleController::showAction
+  methods:  GET
+
+backend_admin_role_new:
+  path:     role/new
+  controller: App\Controller\RoleController::newAction
+  #methods:  [GET, POST]
+
+backend_admin_role_create:
+  path:     role/create
+  controller: App\Controller\RoleController::createAction
+  requirements: { _method: post }
+
+
+backend_admin_role_edit:
+  path:     role/{id}/edit
+  controller: App\Controller\RoleController::editAction
+  #methods:  [GET, POST]
+
+
+backend_admin_role_update:
+  path:     role/{id}/update
+  controller: App\Controller\RoleController::updateAction
+  requirements: { _method: post|put }
+
+backend_admin_role_delete:
+  path:     role/{id}/delete
+  controller: App\Controller\RoleController::deleteAction
+  #methods:  DELETE
+
+role_list_datatables:
+  path: role/list/datatables
+  defaults:
+    _controller: App\Controller\RoleController::listDatatablesAction
+
+

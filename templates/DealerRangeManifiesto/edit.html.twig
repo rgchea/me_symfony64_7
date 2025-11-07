@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+{{ parent() }}
+<li> <a href="{{ path('dealerrangemanifiesto_index') }}">Listado de Rangos</a> </li>
+<li> <a href="{{ path('dealerrangemanifiesto_edit', { 'id': entity.id }) }}">Editar Rango</a> </li>
+{% endblock %}
+
+{% block myContent %}
+    {{ parent() }}
+    {{ include('DealerRangeManifiesto/form.html.twig') }}
+{% endblock %}

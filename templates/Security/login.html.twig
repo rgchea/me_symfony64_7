@@ -1,0 +1,129 @@
+{% extends 'base_security.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<form method="POST" id="loginForm">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+    <!-- start: page -->
+    <section class="body-sign">
+        <div class="center-sign">
+
+            <a href="" class="logo float-left">
+                <img src="{{ asset('build/images/portoadmin/logo_mayaexpress.png') }}" style="width: 150px" alt="" />
+
+            </a>
+
+            <div class="panel card-sign">
+                <div class="card-title-sign mt-3 text-right">
+                    <h2 class="title text-uppercase font-weight-bold m-0"><i class="fas fa-user mr-1"></i> Login</h2>
+                </div>
+                <div class="card-body">
+
+                        <div class="form-group mb-3">
+                            <label>{{ 'label_user'|trans }}</label>
+                            <div class="input-group">
+                                <input id="username" name="username" type="text" required class="form-control form-control-lg" />
+                                <span class="input-group-append">
+										<span class="input-group-text">
+											<i class="fas fa-user"></i>
+										</span>
+									</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <div class="clearfix">
+                                {#
+                                <label class="float-left">{{ 'label_login_password'|trans }}</label>
+                                <a href="{{ path('my_forgot_password_request') }}" class="float-right">{{ 'label_login_forgot_password'|trans }}</a>
+
+                                #}
+                            </div>
+                            <div class="input-group">
+                                <input name="password" type="password" required class="form-control form-control-lg" />
+                                <span class="input-group-append">
+										<span class="input-group-text">
+											<i class="fas fa-lock"></i>
+										</span>
+									</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="checkbox-custom checkbox-default">
+
+                                    <input id="rememberMe" name="_remember_me" type="checkbox"/>
+                                    <label for="rememberMe">{{ 'label_remember_me'|trans }}</label>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-4 text-right">
+                                <button type="submit" class="btn btn-primary mt-2">{{ 'label_login_login'|trans }}</button>
+                            </div>
+                        </div>
+
+
+
+                </div>
+            </div>
+
+            {#<p class="text-center text-muted mt-3 mb-3">&copy; Copyright 2017. All Rights Reserved.</p>#}
+        </div>
+    </section>
+    <!-- end: page -->
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+    {#
+        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        See https://symfony.com/doc/current/security/remember_me.html
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+    #}
+
+</form>
+    <script type="text/javascript" language="JavaScript">
+        const rmCheck = document.getElementById("rememberMe"),
+            emailInput = document.getElementById("username");
+
+        if (localStorage.checkbox && localStorage.checkbox !== "") {
+            rmCheck.setAttribute("checked", "checked");
+            emailInput.value = localStorage.username;
+        } else {
+            rmCheck.removeAttribute("checked");
+            emailInput.value = "";
+        }
+
+
+        $("#loginForm").on("submit", function(){
+            //Code: Action (like ajax...)
+            lsRememberMe();
+            $('.pizote_spinner').show();
+            return true;
+        });
+
+        function lsRememberMe() {
+            if (rmCheck.checked && emailInput.value !== "") {
+                localStorage.username = emailInput.value;
+                localStorage.checkbox = rmCheck.value;
+            } else {
+                localStorage.username = "";
+                localStorage.checkbox = "";
+            }
+        }
+    </script>
+{% endblock %}

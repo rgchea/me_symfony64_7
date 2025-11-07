@@ -1,0 +1,24 @@
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[1].use[1]!./assets/css/portoadmin/vendor/datatables/extras/TableTools/FixedColumns-3.2.3/css/fixedColumns.dataTables.css ***!
+  \*****************************************************************************************************************************************************************************************************/
+table.DTFC_Cloned thead,
+table.DTFC_Cloned tfoot {
+  background-color: white;
+}
+
+div.DTFC_Blocker {
+  background-color: white;
+}
+
+div.DTFC_LeftWrapper table.dataTable,
+div.DTFC_RightWrapper table.dataTable {
+  margin-bottom: 0;
+  z-index: 2;
+}
+div.DTFC_LeftWrapper table.dataTable.no-footer,
+div.DTFC_RightWrapper table.dataTable.no-footer {
+  border-bottom: none;
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3NzL2Nzcy9maXhlZENvbHVtbnMuZGF0YVRhYmxlcy5mNGJiMTU2ZC5jc3MiLCJtYXBwaW5ncyI6Ijs7O0FBQUE7O0VBRUUsdUJBQXVCO0FBQ3pCOztBQUVBO0VBQ0UsdUJBQXVCO0FBQ3pCOztBQUVBOztFQUVFLGdCQUFnQjtFQUNoQixVQUFVO0FBQ1o7QUFDQTs7RUFFRSxtQkFBbUI7QUFDckIiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hc3NldHMvY3NzL3BvcnRvYWRtaW4vdmVuZG9yL2RhdGF0YWJsZXMvZXh0cmFzL1RhYmxlVG9vbHMvRml4ZWRDb2x1bW5zLTMuMi4zL2Nzcy9maXhlZENvbHVtbnMuZGF0YVRhYmxlcy5jc3MiXSwic291cmNlc0NvbnRlbnQiOlsidGFibGUuRFRGQ19DbG9uZWQgdGhlYWQsXHJcbnRhYmxlLkRURkNfQ2xvbmVkIHRmb290IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuZGl2LkRURkNfQmxvY2tlciB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbmRpdi5EVEZDX0xlZnRXcmFwcGVyIHRhYmxlLmRhdGFUYWJsZSxcclxuZGl2LkRURkNfUmlnaHRXcmFwcGVyIHRhYmxlLmRhdGFUYWJsZSB7XHJcbiAgbWFyZ2luLWJvdHRvbTogMDtcclxuICB6LWluZGV4OiAyO1xyXG59XHJcbmRpdi5EVEZDX0xlZnRXcmFwcGVyIHRhYmxlLmRhdGFUYWJsZS5uby1mb290ZXIsXHJcbmRpdi5EVEZDX1JpZ2h0V3JhcHBlciB0YWJsZS5kYXRhVGFibGUubm8tZm9vdGVyIHtcclxuICBib3JkZXItYm90dG9tOiBub25lO1xyXG59XHJcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/

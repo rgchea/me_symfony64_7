@@ -1,0 +1,91 @@
+
+	<header role="heading">
+		<h2>Formulario de Rango Manifiesto</h2>
+
+	</header>
+
+	<!-- widget div-->
+	<div role="content">
+
+		<!-- widget edit box -->
+		<div class="jarviswidget-editbox">
+			<!-- This area used as dropdown edit box -->
+
+		</div>
+		<!-- end widget edit box -->
+
+		<!-- widget content -->
+		<div class="widget-body">
+
+			{{ form_start(form, {
+			 'attr': {'onkeypress': 'return event.keyCode != 13'},
+			 'attr': {'onsubmit': ''}
+			}) }}
+{#                    <form name="backend_adminbundle_dealerrangemanifiesto" methd="post" action=" {{ path('dealerrangemanifiesto_create') }}" onkeypress="return event.keyCode != 13;">#}
+
+			{{ form_errors(form) }}
+
+
+				<fieldset>
+
+				<div class="form-group col-md-6">
+					{{ form_label(form.dealer) }}
+					{{ form_errors(form.dealer) }}
+					{{ form_widget(form.dealer, { 'attr': {'class' : 'form-control' } }
+					) }}
+				</div>
+				<div class="clearfix"></div>
+				<div class="form-group col-md-6">
+					{{ form_label(form.manifiestoFrom) }}
+					{{ form_errors(form.manifiestoFrom) }}
+					{{ form_widget(form.manifiestoFrom, { 'attr': {'class' : 'form-control' } }
+					) }}
+				</div>
+				<div class="form-group col-md-6">
+					{{ form_label(form.manifiestoTo) }}
+					{{ form_errors(form.manifiestoTo) }}
+					{{ form_widget(form.manifiestoTo, { 'attr': {'class' : 'form-control' } }
+					) }}
+				</div>
+				<div class="form-group col-md-6">
+					{{ form_label(form.active) }}
+					{{ form_errors(form.active) }}
+					{{ form_widget(form.active, { 'attr': {'class' : '' } }
+					) }}
+				</div>
+				<div class="clearfix"></div>
+
+				<div class="hide">
+					{{ form_rest(form) }}
+				</div>
+
+				</fieldset>
+
+				<div class="form-actions">
+					<a href="{{ path('dealerrangemanifiesto_index') }}" class="btn btn-danger"> Cancelar </a>
+
+					<button class="btn btn-primary">
+						<i class="fa fa-save"></i>
+						Guardar
+					</button>
+				</div>
+
+{#                    </form>#}
+
+			{{ form_end(form) }}
+
+		</div>
+		<!-- end widget content -->
+
+	</div>
+	<!-- end widget div -->
+
+
+<script type="text/javascript" language="Javascript">
+
+	$("[name='backend_adminbundle_dealerrangemanifiesto']").validate();
+	$("#backend_adminbundle_dealerrangemanifiesto_manifiestoFrom").rules("add", {required:true, digits:true});
+	$("#backend_adminbundle_dealerrangemanifiesto_manifiestoTo").rules("add", {required:true, digits:true});
+
+
+</script>

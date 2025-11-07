@@ -1,0 +1,107 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li> <a href="{{ path('report_guidereplacement') }}">Reposición de Guías</a> </li>
+    <li> <a href="{{ path('guide_replacement_new', { 'id': entity.id }) }}">Ingreso nueva guía</a> </li>
+{% endblock %}
+
+{% block myContent %}
+    {{ parent() }}
+
+    <header role="heading">
+        <h2>Reclamo #{{ entity.id }}</h2>
+    </header>
+
+    <!-- widget div-->
+    <div role="content">
+
+        <!-- widget edit box -->
+        <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+
+        </div>
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+            <form action="{{ path('guide_replacement_new', {'id':guide.id}) }}" method="POST">
+
+                <input type="hidden" value="1" name="submit">
+                <fieldset>
+                    <div class="form-group col-md-3"><b>Guía #{{ guide.code }}</b></div>
+                    <br/>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-md-12">
+                        <label>RECLAMO</label><br/>
+                        {{ entity.claim }}
+                    </div>
+                    <br/>
+                    <div class="clearfix"></div>
+
+                    <div class="form-group col-md-3">
+                        <label>Reposición: {{ entity.replacement == 1 ? 'Si' : 'No' }}</label>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-md-3">
+                        <label>Compra de Producto: {{ entity.productPurchase == 1 ? 'Si' : 'No' }}</label>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="form-group col-md-3">
+                        <label>Monto Compra de Producto: {{ entity.productPurchaseAmount|number_format(2, '.', ',') }}</label>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="form-group col-md-6">
+                        <label>Observaciones:</label>
+
+                        <textarea cols="20" rows="5" class="form-control" disabled>{{ entity.observation }}</textarea>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="form-group col-md-6">
+                        <label>Código de Nueva Guía:</label>
+                        {% if entity.newGuideCode != '' %}
+                            <input type="number" class="form-control col-md-4" name="newGuideCode" id="newGuideCode" value="{{ entity.newGuideCode }}">
+                        {% else %}
+                            <input type="number" class="form-control col-md-4" name="newGuideCode" id="newGuideCode">
+                        {% endif %}
+
+                    </div>
+
+                    <br/>
+                    <div class="clearfix"></div>
+
+                    <div class="form-actions">
+                        <a href="{{ path('report_guidereplacement') }}" class="btn btn-danger"> Cancelar </a>
+
+                        <button class="btn btn-primary">
+                            Guardar
+                        </button>
+                    </div>
+                </fieldset>
+                <!--</form>-->
+            </form>
+
+        </div>
+        <!-- end widget content -->
+
+    </div>
+    <!-- end widget div -->
+
+
+    <script type="text/javascript" language="Javascript">
+
+
+
+
+
+
+    </script>
+
+{% endblock %}
+

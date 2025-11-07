@@ -1,0 +1,48 @@
+report_commission_receivable:    
+    path:     /report/commissionReceivable
+    controller: App\Controller\ReportController::commissionReceivableAction
+    
+report_sale:
+    path:     report/sale
+    controller: App\Controller\ReportController::saleAction
+    
+report_return_claim:    
+    path:     report/returnClaim
+    controller: App\Controller\ReportController::returnClaimAction
+    
+report_account_statement:    
+    path:     report/accountStatement
+    controller: App\Controller\ReportController::accountStatementAction
+    
+report_shipping:    
+    path:     report/shipping
+    controller: App\Controller\ReportController::shippingAction
+
+report_billing:
+    path:     report/billing
+    controller: App\Controller\ReportController::billingAction
+report_trackingless:
+    path:     report/trackingless
+    controller: App\Controller\ReportController::trackinglessAction
+
+report_guidereplacement:
+    path:     report/guidereplacement
+    controller: App\Controller\ReportController::guideReplacementAction
+
+report_guidereplacementtotal:
+    path:     report/guidereplacementtotal
+    controller: App\Controller\ReportController::guideReplacementTotalAction
+
+report_claim_consolidated:
+    path:     report/claimConsolidated
+    controller: App\Controller\ReportController::claimConsolidatedAction
+
+report_shipping_by_user:
+    path:     report/shippingByUser
+    controller: App\Controller\ReportController::shippingByUserAction
+
+report_tax:
+    path:     report/tax
+    controller: App\Controller\ReportController::taxAction
+
+

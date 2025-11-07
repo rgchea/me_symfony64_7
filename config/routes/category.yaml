@@ -1,0 +1,34 @@
+category_index:
+    path:     /category
+    controller: App\Controller\CategoryController::indexAction
+    methods:  GET
+
+category_show:
+    path:     category/{id}/show
+    controller: App\Controller\CategoryController::showAction
+    methods:  GET
+
+category_new:
+    path:     category/new
+    controller: App\Controller\CategoryController::newAction
+    #methods:  [GET, POST]
+    
+category_create:
+    path:     category/create
+    controller: App\Controller\CategoryController::createAction
+    methods:  [GET, POST]
+
+category_edit:
+    path:     category/{id}/edit
+    controller: App\Controller\CategoryController::editAction
+    #methods:  [GET, POST]
+    
+category_update:
+    path:     category/{id}/update
+    controller: App\Controller\CategoryController::updateAction
+    methods:  [PUT, POST]
+
+category_delete:
+    path:     category/{id}/delete
+    controller: App\Controller\CategoryController::deleteAction
+    #methods:  DELETE

@@ -1,0 +1,310 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li> <a href="{{ path('guide_services') }}">Listado de Guías</a> </li>
+    <li> <a href="{{ path('guide_services_edit', { 'id': entity.id }) }}">Editar Servicio de guía</a> </li>
+{% endblock %}
+
+{% block myContent %}
+    {{ parent() }}
+
+
+    <header role="heading">
+        <h2>Formulario de Guía </h2>
+    </header>
+
+    <!-- widget div-->
+    <div role="content">
+
+        <!-- widget edit box -->
+        <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+
+        </div>
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+
+            <form action="{{ path('guide_services_update', { 'id': entity.id }) }}" method="POST" id="formService" name="backend_adminbundle_guide">
+                <fieldset>
+
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.code) }}
+                        {{ form_errors(form.code) }}
+
+                        {% if role|upper == "CONFIRMACION" or role|upper == "ADMINISTRADOR" %}
+                            {{ form_widget(form.code, { 'attr': {'class' : 'form-control' } }) }}
+                        {% else %}
+                            {{ form_widget(form.code, { 'attr': {'readonly' : 'readonly' } }) }}
+                        {% endif %}
+
+
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="form-group col-md-2">
+                        <label>Estado</label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input class="form-control" type="text" readonly value="{{ entity.status }}">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-md-2">
+                        <label>Estado de Pago</label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input class="form-control" type="text" readonly value="{{ entity.paymentStatus }}">
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.service) }}
+                        {{ form_errors(form.service) }}
+                        {{ form_widget(form.service, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.weight) }}
+                        {{ form_errors(form.weight) }}
+                        {{ form_widget(form.weight, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                    <div class="form-group col-md-6">
+
+
+                        {#
+                        {{ form_label(form.price) }}
+                        {{ form_errors(form.price) }}
+                        {{ form_widget(form.price, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+
+                        #}
+                        <input type="hidden" id="backend_adminbundle_guide_price" name="new[price]" value="{{ entity.price }}">
+                        <input type="hidden" name="new[commission]" id="backend_adminbundle_guide_commission" value="{{ entity.commission }}">
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="hide">
+                        {{ form_rest(form) }}
+                    </div>
+
+                </fieldset>
+
+            <div class="form-actions">
+                <a href="{{ path('guide_services') }}" class="btn btn-danger"> Cancelar </a>
+
+                <button class="btn btn-primary" id="btnSave">
+                    <i class="fa fa-save"></i>
+                    Guardar
+                </button>
+            </div>
+
+            <!--</form>-->
+            {{ form_end(form) }}
+
+        </div>
+        <!-- end widget content -->
+
+    </div>
+    <!-- end widget div -->
+
+
+    <script type="text/javascript" language="Javascript">
+
+        //backend_adminbundle_guide_receiverPhone
+        //$("#form_read").validate();
+
+        $( document ).ready(function() {
+
+
+            $("#formService").validate({
+                ignore: [],
+                submitHandler: function(form) {
+                    // something to do when the form is valid
+                    //$('#pizote_spinner').show();
+                    prevCode = '{{ entity.code }}';
+                    $('#backend_adminbundle_guide_code').val($('#backend_adminbundle_guide_code').val().replace(" ", ""));
+
+                    myGuideCode = $('#backend_adminbundle_guide_code').val();
+                    if(prevCode != myGuideCode ){
+                        valueExist = guide_exist();
+                        console.log(valueExist+"<<<<value");
+                        if(valueExist){
+                            return true;
+                            //return false;
+                        }
+                        else{
+                            $('#pizote_spinner').hide();
+                            return false;
+                        }
+                    }
+                    else{
+                        return true;
+                    }
+
+
+                },
+
+                invalidHandler: function(event, validator) {
+                    // something to do when validation fails
+                    console.log("alert fails");
+
+                    //validator.errorList contains an array of objects, where each object has properties "element" and "message".  element is the actual HTML Input.
+                    for (var i=0;i<validator.errorList.length;i++){
+                        console.log(validator.errorList[i]);
+                    }
+
+                    //validator.errorMap is an object mapping input names -> error messages
+                    for (var i in validator.errorMap) {
+                        console.log(i, ":", validator.errorMap[i]);
+                    }
+                    $('#pizote_spinner').hide();
+
+                }
+
+
+            });
+
+            $("#backend_adminbundle_guide_weight").rules("add", {required:true, number: true, min: 0});
+            $("#backend_adminbundle_guide_code").rules("add", {required:true, digits: true, min: 0});
+
+
+        });
+
+        $("#backend_adminbundle_guide_service").change(function() {
+            changePrice();
+        });
+
+        $("#backend_adminbundle_guide_weight").change(function() {
+            changePrice();
+        });
+
+        $('#formService').on("submit", function(){
+            //Code: Action (like ajax...)
+            if($("#formService").valid()){
+                //$('#pizote_spinner').show();
+                //console.log("entra submit");
+                if(changePrice() == 1){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+
+            }
+            else{
+                return false;
+            }
+
+        });
+
+
+
+        function changePrice(){
+
+            $('#pizote_spinner').show();
+
+            var returnValue = 1;
+
+            $.ajax({
+                type:"POST",
+                dataType:"json",
+                async: false,
+                url:"{{ path('guide_change_price') }}",
+                data:{service: $("#backend_adminbundle_guide_service").val(), category: "{{entity.manifiesto.dealer.category.id}}", weight: $("#backend_adminbundle_guide_weight").val() },
+                success:function(data){
+
+                    $('#pizote_spinner').hide();
+
+                    if (data.data == "1"){
+
+                        $("#backend_adminbundle_guide_price").val(data.price.toFixed(2));
+                        $("#backend_adminbundle_guide_commission").val(data.commission.toFixed(2));
+                        //$("#btnSave").show();
+
+                        console.log($("#backend_adminbundle_guide_price").val());
+                        //return true;
+                    }else{
+                        //$("#btnSave").hide();
+                        alert("No se encontró tarifa para servicio, categoría y peso. No es posible guardar los datos.");
+                        //return false;
+
+                    }
+
+                    returnValue = parseInt(data.data);
+                }
+            });
+            console.log(returnValue);
+            return returnValue;
+
+        }
+
+
+        function guide_exist(){
+
+
+            $('#pizote_spinner').show();
+            $('#backend_adminbundle_guide_code').val($('#backend_adminbundle_guide_code').val().replace(" ", ""));
+
+            guide = $('#backend_adminbundle_guide_code').val();
+
+            console.log(guide+">check");
+
+            var returnValue = true;
+
+            /*REVISAR SI EXISTE EN EL LISTADO ACTUAL FRONTEND*/
+
+            /*REVISION EN BASE DE DATOS*/
+            $.ajax({
+                type:"POST",
+                dataType:"html",
+                async: false,
+                url:"{{ path('process_inspect_exist') }}",
+                data:{guide: guide},
+                success:function(data){
+                    if (data == "0"){
+                        $.ajax({
+                            type:"POST",
+                            dataType:"html",
+                            async: false,
+                            url:"{{ path('process_inspect') }}",
+                            data:{guide: guide, dealer: "{{entity.manifiesto.dealer.id}}"},
+                            success:function(data1){
+                                {#alert ("entro y data es: " + data1);#}
+                                if (data1 == "1"){
+                                    returnValue = true;
+                                    return true;
+                                }else{
+                                    alert("Ha ingresado un código de guía inválido para este consecionario.");
+                                    console.log($("#backend_adminbundle_guide_code").val());
+                                    $("#backend_adminbundle_guide_code").val("");
+                                    returnValue = false;
+                                    return false;
+                                }
+                            }
+                        });
+                    }else{
+                        alert("Este número de guía "+$("#backend_adminbundle_guide_code").val()+" ya ha sido utilizado.");
+                        console.log($("#backend_adminbundle_guide_code").val());
+                        $("#backend_adminbundle_guide_code").val("");
+                        returnValue = false;
+                        return false;
+                    }
+                }
+            });
+
+            $('#pizote_spinner').hide();
+            return returnValue;
+
+        }
+
+
+
+    </script>
+
+{% endblock %}

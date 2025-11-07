@@ -1,0 +1,78 @@
+guide_index:
+    path:     /guide
+    controller: App\Controller\GuideController::indexAction
+    methods:  [GET, POST]
+    
+    
+guide_view:
+    path:     guide/view
+    controller: App\Controller\GuideController::viewAction
+   # methods:  [GET, POST]
+
+
+guide_show:
+    path:     guide/{id}/show
+    controller: App\Controller\GuideController::showAction
+    methods:  GET
+
+guide_new:
+    path:     guide/new
+    controller: App\Controller\GuideController::newAction
+#    methods:  [GET, POST]
+    
+guide_create:
+    path:     guide/create
+    controller: App\Controller\GuideController::createAction
+    methods:  [GET, POST]
+
+guide_edit:
+    path:     guide/{id}/edit
+    controller: App\Controller\GuideController::editAction
+#    methods:  [GET, POST]
+    
+guide_update:
+    path:     guide/{id}/update
+    controller: App\Controller\GuideController::updateAction
+    methods:  [PUT, POST]
+
+guide_delete:
+    path:     guide/{id}/delete
+    controller: App\Controller\GuideController::deleteAction
+#    methods:  DELETE
+
+
+guide_change_price:
+    path:     guide/changePrice
+    controller: App\Controller\GuideController::changePriceAction
+
+
+guide_services:
+    path:     guide/guideServices
+    controller: App\Controller\GuideController::servicesAction
+
+guide_services_edit:
+    path:     guide/{id}/servicesEdit
+    controller: App\Controller\GuideController::servicesEditAction
+
+guide_services_update:
+    path:     guide/{id}/servicesUpdate
+    controller: App\Controller\GuideController::servicesUpdateAction
+    methods:  [PUT, POST]
+
+guide_list_datatables:
+    path: guide/list/datatables
+    defaults:
+        _controller: App\Controller\GuideController::listDatatablesAction
+
+guide_replacement_new:
+    path:     guide/{id}/replacementnew
+    controller: App\Controller\GuideController::replacementNewAction
+
+guide_refund:
+    path:     guide/guideRefund
+    controller: App\Controller\GuideController::refundAction
+
+guide_refund_update:
+    path:     guide/{id}/refundUpdate
+    controller: App\Controller\GuideController::refundUpdateAction
+    #methods:  [PUT, POST]

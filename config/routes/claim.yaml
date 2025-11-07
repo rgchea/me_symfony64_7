@@ -1,0 +1,22 @@
+backend_admin_claim_index:
+    path:     /claim
+    controller: App\Controller\ClaimController::indexAction
+    #methods:  GET
+
+
+backend_admin_claim_edit:
+    path:     claim/{id}/edit
+    controller: App\Controller\ClaimController::editAction
+    #methods:  [GET, POST]
+    
+backend_admin_claim_update:
+    path:     claim/{id}/update
+    controller: App\Controller\ClaimController::updateAction
+    methods:  [PUT, POST]
+    
+backend_admin_claim_delete:
+    path:     claim/{id}/delete
+    controller: App\Controller\ClaimController::deleteAction
+    #methods:  DELETE
+    
+

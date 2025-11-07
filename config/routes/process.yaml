@@ -1,0 +1,79 @@
+process_pre_check_read_code:
+    path:     /process
+    controller: App\Controller\ProcessController::preCheckReadCodeAction
+
+process_pre_check:
+    path:     process/precheck
+    controller: App\Controller\ProcessController::preCheckAction
+    
+process_confirm_read_code:
+    path:     process/confirmread
+    controller: App\Controller\ProcessController::confirmReadCodeAction
+    
+process_confirm:
+    path:     process/confirm
+    controller: App\Controller\ProcessController::confirmAction   
+    
+process_confirm_save:
+    path:     process/confirmsave
+    controller: App\Controller\ProcessController::confirmSaveAction 
+
+process_inspect:
+    path:     process/inspect
+    controller: App\Controller\ProcessController::inspectAction
+    
+process_inspect_exist:
+    path:     process/inspectexist
+    controller: App\Controller\ProcessController::inspectExistAction
+
+process_inspect_alexist_alternate:
+    path:     process/inspectexistalternate
+    controller: App\Controller\ProcessController::inspectExistAlternateAction
+
+process_check_replacement:
+    path:     process/checkreplacement
+    controller: App\Controller\ProcessController::checkReplacementAction
+
+process_inspect_box:
+    path:     process/inspectbox
+    controller: App\Controller\ProcessController::inspectBoxAction
+  
+process_pre_check_save:
+    path:     process/prechecksave
+    controller: App\Controller\ProcessController::precheckSaveAction
+
+process_checkout:
+    path:     process/checkout
+    controller: App\Controller\ProcessController::checkoutAction
+    
+process_claim:
+    path:     process/{id}/claim
+    controller: App\Controller\ProcessController::claimAction  
+
+process_insert_claim:
+    path:     process/insertclaim
+    controller: App\Controller\ProcessController::insertClaimAction
+    
+process_delete_guide_read:
+    path:     process/deleteguideread
+    controller: App\Controller\ProcessController::deleteGuideReadAction
+
+process_delete_guide:
+    path:     process/deleteguide
+    controller: App\Controller\ProcessController::deleteGuideAction
+
+process_delete_guide_confirm:
+    path:     process/deleteguideconfirm
+    controller: App\Controller\ProcessController::deleteGuideConfirmAction
+
+process_delete_manifiesto_read:
+    path:     process/deletemanifiestoread
+    controller: App\Controller\ProcessController::deleteManifiestoReadAction
+
+process_delete_manifiesto:
+    path:     process/deletemanifiesto
+    controller: App\Controller\ProcessController::deleteManifiestoAction
+
+process_delete_manifiesto_confirm:
+    path:     process/deletemanifiestoconfirm
+    controller: App\Controller\ProcessController::deleteManifiestoConfirmAction

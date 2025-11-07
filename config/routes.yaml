@@ -1,0 +1,140 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+hello:
+    path: /hello/
+    controller: App\Controller\HelloController::index
+
+index:
+    path: /
+    controller: App\Controller\DefaultController::indexAction
+
+backend_admin_homepage:
+    path:     /dashboard
+    controller: App\Controller\DefaultController::indexAction
+
+#MODULE ACCESS
+backend_admin_moduleaccess:
+    path:     /moduleaccess
+    controller: App\Controller\ModuleAccessController::indexAction
+
+backend_admin_moduleaccess_create:
+    path:     /moduleaccess_create
+    controller: App\Controller\ModuleAccessController::createAction
+    requirements: { _method: post }
+
+app_login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+
+
+#REST
+#rest:
+#  type: rest
+#  resource: "../config/routes/routing_rest.yaml"
+#  prefix: /api
+
+app.swagger_ui:
+    path: /api/doc
+    methods: GET
+    controller: nelmio_api_doc.controller.swagger_ui
+
+#USER
+backend_admin_user:
+    resource: '../config/routes/user.yaml'
+
+#ROLE
+backend_admin_role:
+    resource: "../config/routes/role.yaml"
+
+#BANK
+backend_admin_bank:
+    resource: "../config/routes/bank.yaml"
+
+#tax
+backend_admin_tax:
+    resource: "../config/routes/tax.yaml"
+
+#CATEGORY
+backend_admin_category:
+    resource: "../config/routes/category.yaml"
+
+#CLAIM
+backend_admin_claim:
+    resource: "../config/routes/claim.yaml"
+
+#CLAIMTYPE
+backend_admin_claim_type:
+    resource: "../config/routes/claimtype.yaml"
+
+#DEALER
+backend_admin_dealer:
+    resource: "../config/routes/dealer.yaml"
+
+#DEALER NOTIFICATION
+backend_admin_dealernotification:
+    resource: "../config/routes/dealernotification.yaml"
+
+#DEALER RANGE GUIDE
+backend_admin_dealer_range_guide:
+    resource: "../config/routes/dealerrangeguide.yaml"
+
+#DEALER RANGE MANIFIESTO
+backend_admin_dealer_range_manifiesto:
+    resource: "../config/routes/dealerrangemanifiesto.yaml"
+
+#COUNTRY
+backend_admin_country:
+    resource: "../config/routes/globalcountry.yaml"
+
+#GUIDE
+backend_admin_guide:
+    resource: "../config/routes/guide.yaml"
+
+#INVENTORY ORDER
+backend_admin_inventory_order:
+    resource: "../config/routes/inventoryorder.yaml"
+
+#INVENTORY PRODUCT
+backend_admin_inventory_product:
+    resource: "../config/routes/inventoryproduct.yaml"
+
+#INVENTORY PRODUCT CATEGORY
+backend_admin_inventory_product_category:
+    resource: "../config/routes/inventoryproductcategory.yaml"
+
+#MANIFIESTO
+backend_admin_manifiesto:
+    resource: "../config/routes/manifiesto.yaml"
+
+#PROCESS
+backend_admin_process:
+    resource: "../config/routes/process.yaml"
+
+#RATE
+backend_admin_rate:
+    resource: "../config/routes/rate.yaml"
+
+#REPORT
+backend_admin_report:
+    resource: "../config/routes/report.yaml"
+
+#SERVICE
+backend_admin_service:
+    resource: "../config/routes/service.yaml"
+
+#SYSTEM LOG
+backend_admin_system_log:
+    resource: "../config/routes/systemlog.yaml"
+
+#USER NOTIFICATION
+backend_admin_usernotification:
+    resource: "../config/routes/usernotification.yaml"
+
+#USER NOTIFICATION
+backend_admin_resetpassword:
+    resource: "../config/routes/resetpassword.yaml"
+

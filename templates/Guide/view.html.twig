@@ -1,0 +1,107 @@
+<div>
+	<h2>Guía {{entity.code}}</h2>
+	
+
+</div>
+
+<table>
+		
+	<thead>
+	    <tr> 
+	        <th width="150px">Fecha</th>
+	        <td colspan="3">
+	        
+	            {% set track = entity.tracking ~ '-' %}
+	            {% set trackCharge = entity.tracking_charge ~ '-' %}
+	            {% set fedex = entity.fedex ~ '-' %}
+	            
+	    		{{ entity.createdAt|date("d/m/Y") }}
+	    	</td>
+	    </tr>
+	                
+	    <tr>   
+	        <th>Consecionario</th>
+	        <td>{{ entity.dealer }}</td>	    
+
+	    </tr>   
+	    <tr>
+	        <th>Servicio</th>
+	        <td>{{ entity.service }}</td>	    
+	    </tr> 
+	    <tr>
+	        <th>Tracking</th>
+	        <td colspan="3">{{ track }}</td>
+	    </tr>
+	    <tr>
+	        <th>Fedex Tracking</th>
+	        <td colspan="3">{{ fedex }}</td>
+	    </tr>	
+        {% if (role == 'ADMINISTRADOR' or role == 'DIGITADOR' or role == 'SERVICIO AL CLIENTE' or role == 'VENTAS') %}
+            <tr>
+            	<th>Tracking x Cobrar</th>
+            	<td colspan="3">{{ trackCharge }}</td>
+            </tr>
+        {% endif %}	        
+	    
+	    <tr>
+	        <th>Comentario</th>
+	        <td colspan="3"><textarea class="form-control" rows="2" cols="50" disabled="disabled">{{ entity.comment }}</textarea></td>
+	    </tr>
+	        
+	    <tr>
+	        <th>Status</th>
+	        <td colspan="3">{{ entity.status }}</td>
+	    </tr>
+	        
+	        
+	    <tr>
+	        <th>Remitente</th>
+	        <td>{{ entity.sender_name }}</td>
+	        <th>Tel. Rem</th>
+	        <td>{{ entity.sender_phone }}</td>
+	    </tr>
+	        
+	    <tr>
+	        <th>Destinatario</th>
+	     	<td>{{ entity.receiver_name }}</td>
+	    </tr>
+	        
+	    <tr>
+	        <th>Dir. Dest</th>
+	        <td>{{ entity.receiver_address }}</td>
+	        <th>Tel. Dest</th>
+	        <td>{{ entity.receiver_phone }}</td>
+	    </tr>
+	        
+	    <tr>
+	        <th>Peso</th>
+	        <td colspan="3">{{ entity.weight }}</td>
+	    </tr>
+	        
+	    <tr>
+	        <th>Contenido</th>
+	        <td colspan="3">{{ entity.sent_data }}</td>
+	    </tr>
+	    <tr>    
+	        {#<th>Manifiesto</th>
+	        <th>Caja</th>#}
+	        {% if (role == 'ADMINISTRADOR' or role == 'CONTABILIDAD' or role == 'VENTAS') %}
+	        	<tr>
+		            <th>Precio</th>
+		            <td colspan="3">{{ entity.price }}</td>
+		            
+		        </tr>
+		        <tr>
+		        	<th>Estado Pago</th>
+		        	<td colspan="3">{{ entity.payment_status }}</td>
+		        </tr>
+		            
+	        {% endif %}
+
+	        {#<th>Datos de Remitente</th>
+	        <th>Datos de Destinatario</th>#}
+	    </tr>
+	</thead>
+	
+	
+</table>

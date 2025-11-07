@@ -1,0 +1,125 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li> <a href="{{ path('dealerrangemanifiesto_index') }}">Listado de Rangos Manifiestos</a> </li>
+    {% endblock %}
+
+{% block title %}
+    Rangos
+{% endblock %}
+
+
+{% block myContent %}
+{{ parent() }}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+
+    </div>
+    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+        <a class="pull-right btn btn-primary btn-lg" href="{{ path('dealerrangemanifiesto_new') }}">
+            Crear Nuevo Rango
+        </a>
+    </div>
+</div>
+
+<div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+    <header>
+        <h2> Listado de Rangos</h2>
+    </header>
+
+    <!-- widget div-->
+    <div>
+
+        <!-- widget edit box -->
+        <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+
+        </div>
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body no-padding">
+            <div class="widget-body-toolbar">
+
+            </div>
+
+            <table id="dt_basic" class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                    	<th>ID</th>
+                        <th>Consecionario</th>
+                        <th>Manifiesto Desde</th>
+                        <th>Manifiesto Hasta</th>
+                        <th>Activo</th>
+                        <th width="150">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for entity in entities %}
+                    <tr>
+                        <td>{{ entity.id }}</td>
+                        <td>{{ entity.dealer }}</td>
+                        <td>{{ entity.manifiestoFrom }}</td>
+                        <td>{{ entity.manifiestoTo }}</td>
+                        <td>{{ entity.active }}</td>
+                        <td>
+                        	<a href="{{ path('dealerrangemanifiesto_edit', {'id': entity.id }) }}">
+								<div class="btn btn-sm btn-primary">
+									<span class="fa fa-search"></span>
+								</div>                        	
+                        		
+                        	</a>
+                            <a class="btn btn-danger btn-sm btnDelete" href="{{ path('dealerrangemanifiesto_delete', { 'id': entity.id }) }}">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+        </div>
+        <!-- end widget content -->
+
+        
+
+    </div>
+    <!-- end widget div -->
+
+    <script type="text/javascript" language="Javascript">
+
+        $( document ).ready(function() {
+
+            $(document).on('click', '.btnDelete', function(e){
+                e.preventDefault();
+
+                var url = $(this).attr('href');
+                var c = confirm('{{ 'label_are_you_sure'|trans }}');
+
+                if(c){
+                    window.location = url;
+                }else{
+                    return false;
+                }
+
+
+            });
+
+            $('#dt_basic').DataTable({
+
+                "aaSorting": [[ 0, "asc" ]],
+            });
+
+        });
+
+
+
+    </script>
+
+    
+</div>    
+
+{% endblock %}

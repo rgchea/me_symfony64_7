@@ -1,0 +1,131 @@
+{
+    "name": "mayawork/mayaexpress",
+    "description": "MayaExpress Symfony application.",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.3",
+        "ext-ctype": "*",
+        "ext-curl": "*",
+        "ext-gd": "*",
+        "ext-iconv": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-xml": "*",
+        "ext-zip": "*",
+        "chriskonnertz/string-calc": "^1.0",
+        "doctrine/annotations": "^2.0",
+        "doctrine/dbal": "^3",
+        "doctrine/doctrine-bundle": "^2.10",
+        "doctrine/doctrine-migrations-bundle": "^3.4",
+        "doctrine/orm": "^2.20",
+        "friendsofsymfony/rest-bundle": "^3.7.1",
+        "google/apiclient": "^2.16",
+        "jms/serializer-bundle": "^5.5",
+        "lcobucci/jwt": "^5.5",
+        "lexik/jwt-authentication-bundle": "^2.20",
+        "nelmio/api-doc-bundle": "^4.0",
+        "nelmio/cors-bundle": "^2.5",
+        "phpoffice/phpspreadsheet": "^1.29",
+        "qipsius/tcpdf-bundle": "^2.0",
+        "sensio/framework-extra-bundle": "^6.2",
+        "symfony/asset": "6.4.*",
+        "symfony/cache": "6.4.*",
+        "symfony/config": "6.4.*",
+        "symfony/console": "^6.4",
+        "symfony/dotenv": "6.4.*",
+        "symfony/error-handler": "6.4.*",
+        "symfony/expression-language": "6.4.*",
+        "symfony/filesystem": "6.4.*",
+        "symfony/finder": "6.4.*",
+        "symfony/flex": "^2",
+        "symfony/form": "6.4.*",
+        "symfony/framework-bundle": "6.4.*",
+        "symfony/google-mailer": "6.4.*",
+        "symfony/http-client": "6.4.*",
+        "symfony/http-foundation": "6.4.*",
+        "symfony/http-kernel": "6.4.*",
+        "symfony/intl": "6.4.*",
+        "symfony/mailer": "6.4.*",
+        "symfony/monolog-bundle": "^3.10",
+        "symfony/process": "6.4.*",
+        "symfony/property-access": "6.4.*",
+        "symfony/property-info": "6.4.*",
+        "symfony/routing": "6.4.*",
+        "symfony/runtime": "6.4.*",
+        "symfony/security-bundle": "6.4.*",
+        "symfony/serializer": "6.4.*",
+        "symfony/translation": "6.4.*",
+        "symfony/twig-bundle": "6.4.*",
+        "symfony/twilio-notifier": "6.4.*",
+        "symfony/validator": "6.4.*",
+        "symfony/web-link": "6.4.*",
+        "symfony/webpack-encore-bundle": "*",
+        "symfony/yaml": "6.4.*",
+        "symfonycasts/reset-password-bundle": "^1.23",
+        "twig/extra-bundle": "^3.0",
+        "twig/twig": "^3.0",
+        "twilio/sdk": "^8.6"
+    },
+    "require-dev": {
+        "symfony/browser-kit": "6.4.*",
+        "symfony/css-selector": "6.4.*",
+        "symfony/debug-bundle": "6.4.*",
+        "symfony/maker-bundle": "^1.60",
+        "symfony/phpunit-bridge": "6.4.*",
+        "symfony/web-profiler-bundle": "6.4.*",
+        "symplify/config-transformer": "^12.4"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": { "*": "dist" },
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "symfony/flex": true,
+            "symfony/runtime": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php73": "*",
+        "symfony/polyfill-php74": "*",
+        "symfony/polyfill-php80": "*",
+        "symfony/polyfill-php81": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "6.4.*"
+        }
+    }
+}

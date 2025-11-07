@@ -1,0 +1,35 @@
+dealerrangemanifiesto_index:
+    path:     /dealerrangemanifiesto
+    controller: App\Controller\DealerRangeManifiestoController::indexAction
+    methods:  GET
+
+dealerrangemanifiesto_show:
+    path:     dealerrangemanifiesto/{id}/show
+    controller: App\Controller\DealerRangeManifiestoController::showAction
+    methods:  GET
+
+dealerrangemanifiesto_new:
+    path:     dealerrangemanifiesto/new
+    controller: App\Controller\DealerRangeManifiestoController::newAction
+#    methods:  [GET, POST]
+
+dealerrangemanifiesto_create:
+    path:     dealerrangemanifiesto/create
+    controller: App\Controller\DealerRangeManifiestoController::createAction
+    methods:  [GET, POST]
+
+dealerrangemanifiesto_edit:
+    path:     dealerrangemanifiesto/{id}/edit
+    controller: App\Controller\DealerRangeManifiestoController::editAction
+#    methods:  [GET, POST]
+
+dealerrangemanifiesto_update:
+    path:     dealerrangemanifiesto/{id}/update
+    controller: App\Controller\DealerRangeManifiestoController::updateAction
+    methods:  [PUT, POST]
+
+
+dealerrangemanifiesto_delete:
+    path:     dealerrangemanifiesto/{id}/delete
+    controller: App\Controller\DealerRangeManifiestoController::deleteAction
+#    methods:  DELETE

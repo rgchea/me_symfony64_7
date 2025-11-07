@@ -1,0 +1,55 @@
+backend_admin_user_index:
+  path:     /user
+  controller: App\Controller\UserController::indexAction
+
+backend_admin_user_show:
+  path:     user/{id}/show
+  controller: App\Controller\UserController::showAction
+  methods:  GET
+
+backend_admin_user_new:
+  path:     user/new
+  controller: App\Controller\UserController::newAction
+  #methods:  [GET, POST]
+
+backend_admin_user_create:
+  path:     user/create
+  controller: App\Controller\UserController::createAction
+  requirements: { _method: post }
+
+
+backend_admin_user_edit:
+  path:     user/{id}/edit
+  controller: App\Controller\UserController::editAction
+  #methods:  [GET, POST]
+
+
+backend_admin_user_update:
+  path:     user/{id}/update
+  controller: App\Controller\UserController::updateAction
+  requirements: { _method: post|put }
+
+backend_admin_user_delete:
+  path:     user/{id}/delete
+  controller: App\Controller\UserController::deleteAction
+  #methods:  DELETE
+
+user_check_existence:
+  path:     user/usercheckexistence
+  controller: App\Controller\UserController::checkExistence 
+
+
+user_list_datatables:
+  path: user/list/datatables
+  defaults:
+    _controller: App\Controller\UserController::listDatatablesAction
+
+user_load_ajax:
+  path:     user/userlistajax
+  defaults:
+    _controller: App\Controller\UserController::dataAction
+
+backend_admin_user_dealer:
+  path:     user/{id}/userdealer
+  controller: App\Controller\UserController::userDealerAction
+

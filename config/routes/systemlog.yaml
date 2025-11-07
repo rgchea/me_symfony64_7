@@ -1,0 +1,7 @@
+system_log_list_datatables:
+  path: systemlog/log/list/datatables
+  controller: App\Controller\SystemLogController::listDatatablesAction
+
+system_log_list:
+  path: systemlog/log/list
+  controller: App\Controller\SystemLogController::listAction

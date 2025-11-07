@@ -1,0 +1,155 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li> <a href="{{ path('report_return_claim') }}">Retornos y Reclamos</a> </li>
+    {% endblock %}
+
+{% block title %}
+    Retornos y Reclamos
+{% endblock %}
+
+{% block myContent %}
+    {{ parent() }}
+
+	<div class="row">
+            <article class="col-sm-12 col-md-12 col-lg-12 sortable-grid ui-sortable">
+                <div data-widget-editbutton="false" data-widget-colorbutton="false" id="wid-id-2" class="jarviswidget jarviswidget-sortable" style="" role="widget">
+                    <header role="heading">
+                        <h2>Retornos y Reclamos</h2>
+
+                    </header>
+                    <!-- widget div-->
+                    <div role="content">
+                    <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                        <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <form id="filterForm" action="{{path('report_return_claim')}}" method="POST" name="report_return_claim">
+                                <input type="hidden" name="filter" value="true" />
+
+                                <div class="form-group row" >
+                                    <div class="col-md-4">
+                                        <label for="select_tipo">Tipo de Reporte:</label><br />
+                                        <select class="form-control" id="select_tipo" name="select_tipo">
+                                            <option value="0">Retornos</option>
+                                            <option value="1" {{selectedr}}>Reclamos</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="select_dealer">Consecionario:</label><br />
+                                        <select class="form-control" id="select_dealer" name="select_dealer"  >
+                                            <option value="0">Todos</option>
+                                            {% for d in dealer%}
+                                                {% set selected = d.id == select_dealer ? ' selected="selected" ' : ''%}
+                                                <option value="{{d.id}}" {{selected}}>{{ d.name }}</option>
+                                            {% endfor %}
+                                        </select>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-4">
+                                        <label for="created_from">Desde:</label><br />
+                                        <input id="created_from" name="created_from" type="date" class="form-control" value="{{filter_created_from}}" />
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="created_to">Hasta:</label><br />
+                                        <input id="created_to" name="created_to" type="date" class="form-control" value="{{filter_created_to}}" />
+
+                                    </div>
+
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary">
+                                        <i class="fa fa-search"></i>
+                                        Filtrar
+                                    </button>
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </form>
+                            <br />
+                            <table id="dt_basic" class="table table-striped table-bordered table-hover" >
+                                {% if claims is iterable and select_tipo == 1 %}
+                                <thead>
+                                    <tr>
+                                        <th>Guia</th>
+                                        <th>Fecha de Reclamo</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for claim in claims %}
+                                    <tr>
+                                        <td>{{ claim.code }}</td>
+                                        <td>{{ claim.created_at|date("d/m/Y") }}</td>
+                                        <td></td>
+                                    </tr>
+                                {% endfor %}
+                                <tr>
+                                    <td> Total de Reclamos</td>
+                                    <td></td>
+                                    <td><b>{{ countclaims }}</b></td>
+                                </tr>
+                                </tbody>
+                                {% endif %}
+                                {% if returns is iterable and select_tipo == 0 %}
+                                <thead>
+                                    <tr>
+                                        <th>Guia</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for return in returns %}
+                                    <tr>
+                                        <td>{{ return.code }}</td>
+                                        <td></td>
+                                    </tr>
+                                {% endfor %}
+                                <tr>
+                                    <td> Total de Retornos</td>
+                                    <td><b>{{ countreturns }}</b></td>
+                                </tr>
+                                </tbody>
+                                {% endif %}
+                            </table>
+                        </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <div class="clearfix"></div>
+            </article>
+	</div>
+	
+	<script type="text/javascript" language="Javascript">
+
+        $( document ).ready(function() {
+
+            $('#dt_basic').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    {extend: 'print', text: 'Imprimir', message: ''},
+                    {extend: 'excel', text: 'Exportar Excel',message: ''}
+
+                ],
+                "aaSorting": [[ 0, "asc" ]],
+                "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100,"Todos"] ],
+                "iDisplayLength": -1,
+
+            });
+
+        });
+
+
+	</script>  
+   
+{% endblock %}

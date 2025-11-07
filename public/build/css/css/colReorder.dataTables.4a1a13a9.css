@@ -1,0 +1,17 @@
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[1].use[1]!./assets/css/portoadmin/vendor/datatables/extras/TableTools/ColReorder-1.4.1/css/colReorder.dataTables.css ***!
+  \*************************************************************************************************************************************************************************************************/
+table.DTCR_clonedTable.dataTable {
+  position: absolute !important;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 202;
+}
+
+div.DTCR_pointer {
+  width: 1px;
+  background-color: #0259C4;
+  z-index: 201;
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3NzL2Nzcy9jb2xSZW9yZGVyLmRhdGFUYWJsZXMuNGExYTEzYTkuY3NzIiwibWFwcGluZ3MiOiI7OztBQUFBO0VBQ0UsNkJBQTZCO0VBQzdCLDBDQUEwQztFQUMxQyxZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxVQUFVO0VBQ1YseUJBQXlCO0VBQ3pCLFlBQVk7QUFDZCIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2Fzc2V0cy9jc3MvcG9ydG9hZG1pbi92ZW5kb3IvZGF0YXRhYmxlcy9leHRyYXMvVGFibGVUb29scy9Db2xSZW9yZGVyLTEuNC4xL2Nzcy9jb2xSZW9yZGVyLmRhdGFUYWJsZXMuY3NzIl0sInNvdXJjZXNDb250ZW50IjpbInRhYmxlLkRUQ1JfY2xvbmVkVGFibGUuZGF0YVRhYmxlIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGUgIWltcG9ydGFudDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNyk7XHJcbiAgei1pbmRleDogMjAyO1xyXG59XHJcblxyXG5kaXYuRFRDUl9wb2ludGVyIHtcclxuICB3aWR0aDogMXB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICMwMjU5QzQ7XHJcbiAgei1pbmRleDogMjAxO1xyXG59XHJcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/

@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+{{ parent() }}
+<li> <a href="{{ path('guide_index') }}">Listado de Guías</a> </li>
+<li> <a href="{{ path('guide_edit', { 'id': entity.id }) }}">Editar Guía</a> </li>
+{% endblock %}
+
+{% block myContent %}
+    {{ parent() }}
+    {{ include('Guide/form.html.twig') }}
+{% endblock %}

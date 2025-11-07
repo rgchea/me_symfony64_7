@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'mail.restore_password'|trans }}{% endblock %}
+
+{% block body %}
+
+    <section class="body-sign">
+        <div class="center-sign">
+            <a href="" class="logo">
+                <img src="{{ asset('build/images/portoadmin/logo_mayaexpress.png') }}" style="width: 150px" alt="" />
+
+            </a>
+            <div class="panel card-sign">
+
+                {% for flashError in app.flashes('reset_password_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
+                <h1>{{ 'mail.reset_password'|trans }}</h1>
+
+                <form action="{{ path('reset_my_password_mail') }}" method="POST">
+                    <input class="form-control" type="email" name="email" id="email">
+
+                    <div>
+                        <small>
+                            {{ 'mail.insert_email_reset'|trans }}
+                        </small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">{{ 'mail.send_reset_email'|trans }}</button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}

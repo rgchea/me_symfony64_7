@@ -1,0 +1,41 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+
+    uploads_directory: '%kernel.project_dir%/../public/uploads'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    #Doctrine\Common\Annotations\AnnotationReader: ~
+    #doctrine.annotation_reader: '@Doctrine\Common\Annotations\AnnotationReader'
+    #annotation_reader: '@Doctrine\Common\Annotations\AnnotationReader'
+
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: ['controller.service_arguments']
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+    Symfony\Component\HttpFoundation\Session\SessionInterface: '@session'
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    # the `qipsius.tcpdf` service will be injected when a
+    # `Qipsius\TCPDFBundle\Controller\TCPDFController` type-hint is detected
+    Qipsius\TCPDFBundle\Controller\TCPDFController: '@qipsius.tcpdf'
+
+
+    #qipsius.tcpdf.public:
+    #    alias: qipsius.tcpdf
+    #    public: true

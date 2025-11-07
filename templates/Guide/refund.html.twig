@@ -1,0 +1,250 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li> <a href="{{ path('guide_index') }}">Listado de Guías</a> </li>
+{% endblock %}
+
+{% block title %}
+    Listado de Guías
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" language="Javascript">
+        $('#pizote_spinner').show();
+    </script>
+
+
+    <style>
+        #myModal{
+            z-index: 999999;
+            height: 100%;
+            width: 60%;
+            /*margin-top: 10%;*/
+            /*position: absolute;*/
+            float: left;
+            top: 0;
+            left: 0;
+            margin-left: 20%;
+            overflow: hidden;
+
+        }
+
+    </style>
+
+{% endblock %}
+
+
+{% block myContent %}
+    {{ parent() }}
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+            {#<a class="pull-right btn btn-primary btn-lg" href="{{ path('guide_new') }}">
+                Crear Nuevo Consecionario
+            </a>#}
+        </div>
+    </div>
+
+    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+        <header>
+            <h2> Listado de Guías</h2>
+        </header>
+
+        <!-- widget div-->
+        <div>
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+                <!-- This area used as dropdown edit box -->
+
+            </div>
+            <!-- end widget edit box -->
+
+            <!-- widget content -->
+            <div class="widget-body no-padding">
+
+                <form id="filterForm" action="{{path('guide_refund')}}" method="POST" name="guide_index">
+                    <input type="hidden" name="filter" value="true" />
+
+                        <div class="form-group row">
+                            {#
+                            <div class="col-md-4">
+                                <label for="select_dealer">Consecionario:</label><br />
+                                <select class="form-control" id="select_dealer" name="select_dealer"  >
+                                    <option value="0">Todos</option>
+                                    {% for d in dealer%}
+                                        {% set selected = d.id == select_dealer ? ' selected="selected" ' : ''%}
+                                        <option value="{{d.id}}" {{selected}}>{{ d.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <input type="hidden" name="select_tipo" value="0"/>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="select_status">Status:</label><br />
+                                <select class="form-control" id="select_status" name="select_status"  >
+                                    {% set selectedsti = "Ingresado" == select_status ? ' selected="selected" ' : ''%}
+                                    {% set selectedstc = 'Confirmado' == select_status ? ' selected="selected" ' : ''%}
+                                    {% set selectedstet = "En transito" == select_status ? ' selected="selected" ' : ''%}
+                                    {% set selectedster = "En ruta de entrega" == select_status ? ' selected="selected" ' : ''%}
+                                    {% set selectedsten = "Entregado" == select_status ? ' selected="selected" ' : ''%}
+                                    {% set selectedstr = "Retorno" == select_status ? ' selected="selected" ' : ''%}
+                                    {% set selectedstrc = "Retorno Chicago" == select_status ? ' selected="selected" ' : ''%}
+                                    {% set selectedstd = "Devolución" == select_status ? ' selected="selected" ' : ''%}
+                                    {% set selectedstnl = "Notice Left" == select_status ? ' selected="selected" ' : ''%}
+                                    {% set selectedstes = "Estación" == select_status ? ' selected="selected" ' : ''%}
+
+                                    <option value="">Todos</option>
+                                    <option value="Ingresado" {{ selectedsti }}>Ingresado</option>
+                                    <option value="Confirmado" {{ selectedstc }}>Confirmado</option>
+                                    <option value="En transito" {{ selectedstet }}>En transito</option>
+                                    <option value="En ruta de entrega" {{ selectedster }}>En ruta de entrega</option>
+                                    <option value="Entregado" {{ selectedsten }}>Entregado</option>
+                                    <option value="Retorno" {{ selectedstr }}>Retorno</option>
+                                    <option value="Retorno Chicago" {{ selectedstrc }}>Retorno Chicago</option>
+                                    <option value="Devolución" {{ selectedstd }}>Devolución</option>
+                                    <option value="Notice Left" {{ selectedstnl }}>Notice Left</option>
+                                    <option value="Estación" {{ selectedstes }}>Estación</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-4">
+                                <label for="created_from">Desde:</label><br />
+                                <input   id="created_from" name="created_from" type="date" class="form-control" value="{{filter_created_from}}" />
+
+                            </div>
+                            <div class="col-md-4">
+                                <label for="created_to">Hasta:</label><br />
+                                <input  id="created_to" name="created_to" type="date" class="form-control" value="{{filter_created_to}}" />
+                            </div>
+
+                            #}
+
+                            <div class="clearfix"></div>
+                            <div class="col-md-4">
+                                <label for="code">Código de Guía:</label><br />
+                                <input class="form-control" type="text" name="code" id="code" required />
+                            </div>
+                            <div class="col-md-4">
+                                <label for="code">&nbsp;</label><br />
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-search"></i>
+                                    Filtrar
+                                </button>
+                            </div>
+
+                        </div>
+
+                </form>
+                <br/><br/>
+                <div class="widget-body-toolbar">
+
+                </div>
+                <table id="example" class="stripe row-border order-column table-hover" style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>Guía</th>
+                        <th>Fecha</th>
+                        <th>Servicio</th>
+                        <th>Peso</th>
+                        <th>Status</th>
+                        <th>Consecionario</th>
+                        <th>Estado Pago</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in entities %}
+
+
+                        <tr>
+                            <td>{{ entity.code }}</td>
+                            <td data-order="{{ entity.createdAt|date("Y-m-d") }}">{{ entity.createdAt|date("d/m/Y") }}</td>
+                            <td>{{ entity.service }}</td>
+                            <td>{{ entity.weight }}</td>
+                            <td>{{ entity.status }}</td>
+                            <td>{{ entity.dealer }}</td>
+                            <td>{{ entity.payment_status }}</td>
+                            {% if entity.status == "Ingresado" %}
+                                <td>
+                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="{{ path('guide_refund_update', {'id': entity.id }) }}">
+                                        <div class="btn btn-sm btn-primary">
+                                            Actualizar a devolución
+                                        </div>
+                                    </a>
+                                </td>
+
+                            {% else %}
+                                <td>&nbsp;</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- end widget content -->
+
+        </div>
+        <!-- end widget div -->
+    </div>
+
+
+
+    <script type="text/javascript" language="JavaScript">
+
+        $( document ).ready(function() {
+
+            //$("#created_from").datepicker();
+            //$("#created_to").datepicker();
+
+            // Example 2
+            /*
+            $('.pane--table2').scroll(function() {
+              $('.pane--table2 table').width($('.pane--table2').width() + $('.pane--table2').scrollLeft());
+            });
+            */
+
+
+                var myScrollY = "300px";
+
+                var table = $('#example').DataTable( {
+                    "iDisplayLength": 100,
+                    "order": [[ 1, "asc" ], [ 0, "asc" ]],
+
+                    scrollY:        myScrollY,
+                    scrollX:        true,
+                    scrollCollapse: true,
+                    fixedColumns:   {
+                        leftColumns: 1,
+                        rightColumns: 1
+                    }
+                } );
+
+
+
+            $('#pizote_spinner').hide();
+
+
+
+        });
+
+
+    </script>
+
+{% endblock %}
+
+
+{% block extrascripts %}
+
+
+
+{% endblock %}

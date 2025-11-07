@@ -1,0 +1,271 @@
+<!doctype html>
+<html class="fixed has-top-menu">
+<head>
+    <!-- Basic -->
+
+    {% block metas %}
+        <meta charset="UTF-8">
+        <meta name="keywords" content="HTML5 Admin Template" />
+        <meta name="description" content="">
+        <meta name="author" content="rchea">
+
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    {% endblock %}
+
+
+    <title>
+        {% set _block_title = block('title') %}
+        {% if _block_title is not empty %}
+            {% block title %}{% endblock %}
+        {% endif %}
+    </title>
+    {% block stylesheets %}
+        <!-- Web Fonts  -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+        {#{{ encore_entry_link_tags('app') }}#}
+        <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/animate.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('build/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/bootstrap-datepicker3.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/bootstrap-multiselect.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/default.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/jquery-ui.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/jquery-ui.theme.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/morris.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/select2.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/select2-bootstrap.min.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('build/css/theme.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/dataTables.bootstrap4.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/buttons.bootstrap4.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('build/css/fixedHeader.dataTables.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/fixedColumns.dataTables.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css/colReorder.dataTables.css') }}">
+
+        {#<link rel="stylesheet" href="{{ asset('build/css/jquery-schedule.css') }}">#}
+
+        {{ encore_entry_script_tags('js/modernizr') }}
+        {{ encore_entry_script_tags('js/app') }}
+        {{ encore_entry_script_tags('js/jquery') }}
+
+
+    {% endblock %}
+
+    {% block javascripts %}
+
+        {#<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" integrity="sha256-ffw+9zwShMev88XNrDgS0hLIuJkDfXhgyLogod77mn8=" crossorigin="anonymous"></script>#}
+        {{ encore_entry_script_tags('js/jquery.browser.mobile') }}
+        {{ encore_entry_script_tags('js/popper.min') }}
+        {{ encore_entry_script_tags('js/bootstrap') }}
+        {{ encore_entry_script_tags('js/bootstrap-datepicker') }}
+        {{ encore_entry_script_tags('js/common') }}
+        {{ encore_entry_script_tags('js/nanoscroller') }}
+        {{ encore_entry_script_tags('js/jquery.magnific-popup') }}
+        {{ encore_entry_script_tags('js/jquery.placeholder') }}
+        {{ encore_entry_script_tags('js/jquery-ui') }}
+        {{ encore_entry_script_tags('js/jquery.ui.touch-punch') }}
+        {{ encore_entry_script_tags('js/jquery.appear') }}
+        {{ encore_entry_script_tags('js/bootstrap-multiselect') }}
+
+        {{ encore_entry_script_tags('js/morris') }}
+
+        {#{{ encore_entry_script_tags('snap.svg-min') }}#}
+        {{ encore_entry_script_tags('js/theme') }}
+        {{ encore_entry_script_tags('js/custom') }}
+        {{ encore_entry_script_tags('js/theme.init') }}
+
+        {{ encore_entry_script_tags('js/jquery-validation') }}
+        {{ encore_entry_script_tags('js/jquery-validation-localization') }}
+
+        {{ encore_entry_script_tags('js/select2') }}
+
+        {{ encore_entry_script_tags('js/buttons.colVis.min') }}
+        {{ encore_entry_script_tags('js/dataTables.bootstrap4.min') }}
+
+        {{ encore_entry_script_tags('js/dataTables.buttons.min') }}
+        {{ encore_entry_script_tags('js/buttons.bootstrap4') }}
+        {{ encore_entry_script_tags('js/buttons.flash.min') }}
+        {{ encore_entry_script_tags('js/buttons.html5.min') }}
+        {{ encore_entry_script_tags('js/buttons.print.min') }}
+        {{ encore_entry_script_tags('js/dataTables.fixedColumns') }}
+        {{ encore_entry_script_tags('js/dataTables.fixedHeader') }}
+        {{ encore_entry_script_tags('js/dataTables.colReorder') }}
+        {{ encore_entry_script_tags('js/jszip.min') }}
+
+
+        {#HIGHCHARTS#}
+        {{ encore_entry_script_tags('js/highcharts') }}
+        {{ encore_entry_script_tags('js/highcharts-more') }}
+        {{ encore_entry_script_tags('js/highcharts-exporting') }}
+        {{ encore_entry_script_tags('js/highcharts-export-data') }}
+        {{ encore_entry_script_tags('js/highcharts-offline-exporting') }}
+        {{ encore_entry_script_tags('js/highcharts-series-label') }}
+        {{ encore_entry_script_tags('js/highcharts-accessibility') }}
+
+
+        <!-- MAPS SCRIPTS -->
+        {{ encore_entry_script_tags('js/highmaps') }}
+        {#
+        {{ encore_entry_script_tags('js/highmaps-exporting') }}
+        {{ encore_entry_script_tags('js/highmaps-data') }}
+
+        #}
+        {{ encore_entry_script_tags('js/highmaps-drilldown') }}
+        {{ encore_entry_script_tags('js/highmaps-drilldown') }}
+        {{ encore_entry_script_tags('js/highmaps-gt') }}
+        {{ encore_entry_script_tags('js/highmaps-sv') }}
+
+        {#JQUERY SCHEDULE#}
+        {{ encore_entry_script_tags('js/jquery-schedule') }}
+
+        {#JQUERY password validation#}
+        {{ encore_entry_script_tags('js/password-validation') }}
+
+        <script>
+            $(document).ready(function() {
+                $('.js-example-basic-single').select2();
+
+                {#FADEOUT ALERTAS#}
+                $(".alert").fadeTo(5000, 500).slideUp(500, function(){
+                    $(".alert").alert('close');
+                });
+            });
+
+        </script>
+
+
+    {% endblock %}
+    <!-- Head Libs -->
+    {#<script src="{{ asset('css/portoadmin/vendor/modernizr/modernizr.js') }}"></script>#}
+
+</head>
+<body>
+{% block body %}
+
+
+    <section class="body">
+        <!-- start: header -->
+        {{ include('Partials/header.html.twig') }}
+        <!-- end: header -->
+        <div class="inner-wrapper">
+            <!-- start: navigation bar -->
+
+            <section role="main" class="content-body">
+
+                <header class="page-header">
+
+                    <!-- start: search & user box -->
+                    <div class="header-right">
+                        {#
+                        <form action="pages-search-results.html" class="search nav-form">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
+                                <span class="input-group-append">
+                                                <button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
+                                            </span>
+                            </div>
+                        </form>
+
+                        #}
+
+                        <span class="separator"></span>
+
+                        {{ include('Partials/header_notifications.html.twig') }}
+
+                        <span class="separator"></span>
+
+                        {{ include('Partials/header_user.html.twig') }}
+                    </div>
+                    <!-- end: search & user box -->
+
+                    <div class="right-wrapper text-right">
+                        <ol class="breadcrumbs">
+                            <li>
+                                <a href="{{ path('backend_admin_homepage') }}">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </li>
+                            {% block breadcrumb %}
+                                <li><span>HOME</span></li>
+                            {% endblock %}
+
+                        </ol>
+
+                    </div>
+
+                    {% for flashMessage in app.session.flashbag.get('warning') %}
+
+                        <div class="alert alert-warning">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <strong>{{ 'label_alert.warning'|trans }}</strong> {{ flashMessage|raw }}
+                        </div>
+
+                    {% endfor %}
+
+
+                    {% for flashMessage in app.session.flashbag.get('success') %}
+
+                        <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <strong>{{ 'label_alert.success'|trans }}</strong> {{ flashMessage|raw }}
+                        </div>
+                    {% endfor %}
+
+                    {% for flashMessage in app.session.flashbag.get('info') %}
+                        <div class="alert alert-info">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <strong>{{ 'label_alert.info'|trans }}</strong> {{ flashMessage |raw }}
+                        </div>
+
+                    {% endfor %}
+
+                    {% for flashMessage in app.session.flashbag.get('danger') %}
+
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <strong>{{ 'label_alert.danger'|trans }}</strong> {{ flashMessage|raw }}
+                        </div>
+
+                    {% endfor %}
+
+
+                    {% block page_header %}{% endblock %}
+
+                </header>
+
+                <!-- start: page -->
+                <div class="row">
+                    <div id="pizote_spinner" class="pizote_spinner"></div>
+                    <div class="card-body">
+                        <div class="col-md-12">
+
+                            {% block myContent %}
+
+
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end: page -->
+
+
+
+                <!-- end: navigation bar -->
+
+            </section>
+        </div>
+    </section>
+
+{% endblock %}
+
+</body>
+</html>

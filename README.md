@@ -1,2 +1,1 @@
-# me_symfony64_7
-mayaexpress minimized
+Some client code omitted for confidentiality

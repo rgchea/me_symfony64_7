@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'label_menu.permissions'|trans }}
+{% endblock %}
+
+{% block breadcrumb %}
+
+	<li>
+		<a href="#">
+			<i class="">{{ 'label_menu.config'|trans }}</i>
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<i class="">{{ 'label_menu.permissions'|trans }}</i>
+		</a>
+	</li>
+
+{% endblock %}
+
+{#
+{% block page_header %}
+	<h2>{{ 'label_menu.permissions'|trans }}</h2>
+{% endblock %}
+
+#}
+
+{% block myContent %}
+
+
+	<form id="accessForm" action="{{ path('backend_admin_moduleaccess_create') }}" method="post">
+
+
+		<div class="widget-body no-padding">
+			<div class="widget-body-toolbar">
+			</div>
+
+			<table width="100%" id="dt_basic" class="table-sm table-striped table-bordered table-hover">
+				<thead>
+				<tr>
+					<th>&nbsp;</th>
+					{% for entity in entitiesRole %}
+						<th>{{ entity.name }}</th>
+					{% endfor %}
+				</tr>
+				</thead>
+				<tbody>
+
+				{% for module in entitiesModule %}
+
+					{% if(module.moduleType == 'link') %}
+						<tr>
+							<td><b>{{ module.moduleName }}</b></td>
+
+							{% for role in entitiesRole %}
+								{% set checked = false %}
+								{% for access in entitiesAccess %}
+									{% if access.role.id == role.id and access.module.id == module.moduleID %}
+										{% set checked = true %}
+									{% endif %}
+								{% endfor %}
+								<td><input name="module[{{role.id}}_{{module.moduleID}}]" type="checkbox" {% if checked %}{{ 'checked="checked"' }}{% endif %} /> </td>
+							{% endfor %}
+						</tr>
+
+
+					{% elseif(module.moduleType == 'menu') %}
+
+						<tr>
+
+							<td><b>{{ module.moduleName }}</b></td>
+							<td colspan="{{entitiesRole|length}}">&nbsp;</td>
+							{% for role in entitiesRole %}
+								<input style="display: none" name="module[{{role.id}}_{{module.moduleID}}]" type="checkbox" checked="checked"/>
+							{% endfor %}
+
+						</tr>
+
+						{% for submenu in module %}
+							{% if submenu is iterable %}
+								<tr>
+									<td><b style="margin-left:3em" >{{ submenu.moduleName }}</b></td>
+
+									{% for role in entitiesRole %}
+										{% set checked = false %}
+										{% for access in entitiesAccess %}
+											{% if access.role.id == role.id and access.module.id == submenu.moduleID %}
+												{% set checked = true %}
+											{% endif %}
+										{% endfor %}
+										<td><input name="module[{{role.id}}_{{submenu.moduleID}}]" type="checkbox" {% if checked %}{{ 'checked="checked"' }}{% endif %} /> </td>
+									{% endfor %}
+								</tr>
+							{% endif %}
+						{% endfor %}
+
+					{%else%}
+
+
+					{% endif %}
+
+				{% endfor %}
+
+
+				</tbody>
+			</table>
+
+		</div>
+		<br/>
+		<div class="form-actions">
+			<button class="btn btn-primary" onclick="$('.pizote_spinner').show();">
+				<i class="fa fa-save"></i>
+				{{ 'label_save'|trans }}
+			</button>
+
+		</div>
+	</form>
+
+
+
+{% endblock %}
+
+
+{% block extrascripts %}
+
+
+{% endblock %}

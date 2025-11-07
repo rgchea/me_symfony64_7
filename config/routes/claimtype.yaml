@@ -1,0 +1,42 @@
+backend_admin_claimtype_index:
+  path:     /claimtype
+  controller: App\Controller\ClaimTypeController::indexAction
+
+backend_admin_claimtype_show:
+  path:     claimtype/{id}/show
+  controller: App\Controller\ClaimTypeController::showAction
+  methods:  GET
+
+backend_admin_claimtype_new:
+  path:     claimtype/new
+  controller: App\Controller\ClaimTypeController::newAction
+  #methods:  [GET, POST]
+
+backend_admin_claimtype_create:
+  path:     claimtype/create
+  controller: App\Controller\ClaimTypeController::createAction
+  requirements: { _method: post }
+
+
+backend_admin_claimtype_edit:
+  path:     claimtype/{id}/edit
+  controller: App\Controller\ClaimTypeController::editAction
+  #methods:  [GET, POST]
+
+
+backend_admin_claimtype_update:
+  path:     claimtype/{id}/update
+  controller: App\Controller\ClaimTypeController::updateAction
+  requirements: { _method: post|put }
+
+backend_admin_claimtype_delete:
+  path:     claimtype/{id}/delete
+  controller: App\Controller\ClaimTypeController::deleteAction
+  #methods:  DELETE
+
+claimtype_list_datatables:
+  path: claimtype/list/datatables
+  defaults:
+    _controller: App\Controller\ClaimTypeController::listDatatablesAction
+
+

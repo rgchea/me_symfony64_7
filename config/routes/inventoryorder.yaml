@@ -1,0 +1,35 @@
+backend_admin_inventoryorder_index:
+  path:     /inventoryorder
+  controller: App\Controller\InventoryOrderController::indexAction
+  methods:  GET
+
+backend_admin_inventoryorder_new:
+  path:     inventoryorder/new
+  controller: App\Controller\InventoryOrderController::newAction
+  #    methods:  [GET, POST]
+
+backend_admin_inventoryorder_create:
+  path:     inventoryorder/create
+  controller: App\Controller\InventoryOrderController::createAction
+  methods:  [GET, POST]
+
+backend_admin_inventoryorder_edit:
+  path:     inventoryorder/{id}/edit
+  controller: App\Controller\InventoryOrderController::editAction
+  #    methods:  [GET, POST]
+
+backend_admin_inventoryorder_update:
+  path:     inventoryorder/{id}/update
+  controller: App\Controller\InventoryOrderController::updateAction
+  methods:  [PUT, POST]
+
+backend_admin_inventoryorder_delete:
+  path:     inventoryorder/{id}/delete
+  controller: App\Controller\InventoryOrderController::deleteAction
+#    methods:  DELETE
+
+
+inventoryorder_list_datatables:
+  path: inventoryorder/list/datatables
+  defaults:
+    _controller: App\Controller\InventoryOrderController::listDatatablesAction

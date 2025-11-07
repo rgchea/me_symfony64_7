@@ -1,0 +1,6 @@
+dealernotification_index:
+    path:     /dealernotification
+    controller: App\Controller\DealerNotificationController::indexAction
+    #methods:  GET
+
+

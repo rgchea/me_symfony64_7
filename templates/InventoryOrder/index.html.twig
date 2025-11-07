@@ -1,0 +1,220 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li><a href="#">Inventario</a></li>
+    <li> <a href="{{ path('backend_admin_inventoryorder_index') }}">Ordenes de compra</a></li>
+{% endblock %}
+
+{% block title %}
+    Ordenes de compra
+{% endblock %}
+
+
+{% block myContent %}
+    {{ parent() }}
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+            <a class="pull-right btn btn-primary btn-lg" href="{{ path('backend_admin_inventoryorder_new') }}">
+                Crear nueva Orden de compra
+            </a>
+        </div>
+    </div>
+
+    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+        <header>
+            <h2> Ordenes de compra</h2>
+        </header>
+
+        <!-- widget div-->
+        <div>
+
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+                <!-- This area used as dropdown edit box -->
+
+            </div>
+
+            <!-- end widget edit box -->
+
+            <!-- widget content -->
+            <div class="widget-body no-padding">
+
+                <div class="widget-body-toolbar">
+
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="created_from">Desde:</label><br />
+                        <input  id="created_from" name="created_from" type="date"  class="form-control myFilter input-daterange"  />
+
+                    </div>
+                    <div class="col-md-4">
+                        <label for="created_to">Hasta:</label><br />
+                        <input  id="created_to" name="created_to" type="date" class="form-control myFilter input-daterange" />
+
+                    </div>
+                </div>
+
+                <table id="dt_table" class="table table-striped table-bordered table-hover">
+                    <tfoot class="dt_tfoot">
+                        <tr>
+                            <th>ID</th>
+
+                            <th>Status</th>
+                            <th>Comentario</th>
+
+                            <th style="width: 150px"></th>
+
+                        </tr>
+                    </tfoot>
+                    <thead>
+                        <tr>
+                            {# sorting of properties based on query components #}
+                            <th>ID</th>
+
+                            <th>Status</th>
+                            <th>Comentario</th>
+                            <th style="width: 150px">Acciones</th>
+                        </tr>
+
+                    </thead>
+                    <tbody></tbody>
+
+                </table>
+                {# display navigation #}
+
+            </div>
+            <!-- end widget content -->
+
+
+
+        </div>
+        <!-- end widget div -->
+    </div>
+
+    <script type="text/javascript">
+
+        var table;
+
+
+        function fetchData(){
+
+            table  = $('#dt_table').DataTable({
+                "columnDefs": [
+
+                    // These are the column name variables that will be sent to the server
+                    { "name": "id",   "targets": 0 },
+                    { "name": "status",   "targets": 1 },
+                    { "name": "comment",   "targets": 2 },
+
+                    { "name": "actions",  "targets": 3 }
+
+                ],
+                // Server-side parameters
+                "processing": true,
+                "serverSide": true,
+                // Ajax call
+                "ajax": {
+                    "url": "{{ path('inventoryorder_list_datatables') }}",
+                    "type": "POST",
+                    data   : function( d ) {
+                        //general search
+                        d.filter_from= $('#created_from').val();
+                        d.filter_to= $('#created_to').val();
+
+                    },
+                    //dataType: "html"
+                },
+                // Classic DataTables parameters
+                "paging" : true,
+                "info" : true,
+                "searching": true,
+                "pageLength": 10,
+                "order": [[1, 'asc']],
+
+            });
+
+        }
+
+
+        $('.myFilter').change(function(){
+            var start_date = $('#created_from').val();
+            var end_date = $('#created_to').val();
+
+            if(start_date != '' && end_date !='')
+            {
+                table.ajax.reload()
+
+            }
+            else
+            {
+                alert("Ambas fechas son requeridas");
+            }
+        });
+
+        $( document ).ready(function() {
+
+            document.getElementById("created_from").valueAsDate = new Date();
+            document.getElementById("created_to").valueAsDate = new Date();
+
+            // Add a text input to each footer cell
+            var pos = 1;
+            $('#dt_table tfoot th').each( function () {
+                var title = $(this).text();
+                if(pos != 5){//columna Actions
+                    $(this).html( "<input id='input" + pos + "' type='text' class='form-control' style='font-family:Arial, FontAwesome; width:100%'/>" );
+                }
+
+                pos ++;
+            });
+
+
+            fetchData();
+
+            // Apply the search
+            pos = 1;
+            table.columns().every( function () {
+                var that = this;
+
+                $("#input"+pos).on( 'keyup change', function () {
+                    if ( that.search() !== this.value )
+                    {
+                        that.search( this.value ).draw();
+                    }
+                });
+                pos++;
+            });
+
+
+        });
+
+        jQuery.ajax({ async: false});
+
+
+        $(document).on('click', '.btnDelete', function(e){
+            e.preventDefault();
+
+            var url = $(this).attr('href');
+            var c = confirm("Está seguro?");
+
+            if(c){
+                $('#pizote_spinner').show();
+                window.location = url;
+            }else{
+                return false;
+            }
+
+
+        });
+
+    </script>
+
+
+{% endblock %}

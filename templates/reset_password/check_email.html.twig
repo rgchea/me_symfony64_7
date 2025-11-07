@@ -1,0 +1,29 @@
+{% extends 'base_security.html.twig' %}
+
+{#{% block title %}Password Reset Email Sent{% endblock %}#}
+{% block title %}{{ 'mail.email_sent'|trans }}{% endblock %}
+
+{% block body %}
+    {#
+    <p>An email has been sent that contains a link that you can click to reset your password. This link will expire in {{ tokenLifetime|date('g') }} hour(s).</p>
+    <p>If you don't receive an email please check your spam folder or <a href="{{ path('app_forgot_password_request') }}">try again</a>.</p>
+
+    #}
+    <section class="body-sign">
+        <div class="center-sign">
+            <a href="" class="logo">
+                <img src="{{ asset('build/images/portoadmin/logo_mayaexpress.png') }}" style="width: 150px" alt="" />
+
+            </a>
+            <div class="panel card-sign">
+
+                <p>{{ 'mail.email_sent_msg'|trans}}</p>
+                <p>{{ 'mail.email_retry'|trans }} <a href="{{ path('my_forgot_password_request') }}"></a></p>
+
+                <a href="{{ path('index') }}" class="btn btn-primary">Regresar</a>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

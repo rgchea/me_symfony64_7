@@ -1,0 +1,21 @@
+backend_admin_usernotification_index:
+    path: /usernotification
+    controller: App\Controller\UserNotificationController::indexAction
+
+usernotification_list_datatables:
+    path: usernotification/list/datatables
+    controller: App\Controller\UserNotificationController::listDatatablesAction
+
+
+backend_admin_usernotification_notification:
+    path: usernotification/notification
+    controller: App\Controller\UserNotificationController::notificationAction
+
+backend_admin_usernotification_notification_read:
+    path: usernotification/notificationRead
+    controller: App\Controller\UserNotificationController::notificationReadAction
+
+
+notification_mark_all_read:
+    path: usernotification/notificationMarkAllRead
+    controller: App\Controller\UserNotificationController::notificationMarkAllReadAction

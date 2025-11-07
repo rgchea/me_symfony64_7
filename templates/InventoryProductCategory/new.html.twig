@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li><a href="#">Inventario</a></li>
+    <li> <a href="{{ path('backend_admin_inventoryproductcategory_index') }}">Listado de categorías de productos</a> </li>
+    <li> <a href="{{ path('backend_admin_inventoryproductcategory_new') }}">Nueva categoría de Producto</a> </li>
+{% endblock %}
+
+{% block myContent %}
+    {{ parent() }}
+    {{ include('InventoryProductCategory/form.html.twig') }}
+{% endblock %}

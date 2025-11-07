@@ -1,0 +1,40 @@
+{
+    "devDependencies": {
+        "@babel/core": "^7.28.4",
+        "@babel/preset-env": "^7.28.3",
+        "@symfony/webpack-encore": "^5.2.0",
+        "assets-webpack-plugin": "^7.1.1",
+        "autoprefixer": "^10.4.21",
+        "babel-loader": "^10.0.0",
+        "copy-webpack-plugin": "^12",
+        "core-js": "^3.45.1",
+        "css-loader": "^7.1.2",
+        "file-loader": "^6.2.0",
+        "mini-css-extract-plugin": "^2.9.4",
+        "postcss-loader": "^8.2.0",
+        "regenerator-runtime": "^0.14.1",
+        "sass": "^1.93.2",
+        "sass-loader": "^16.0.5",
+        "webpack": "^5.101.3",
+        "webpack-cli": "^6.0.1",
+        "webpack-notifier": "^1.15.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "datatables.net": "^1.10.20",
+        "datatables.net-bs4": "^1.10.20",
+        "datatables.net-buttons": "^1.6.1",
+        "highcharts": "^8.1.2",
+        "jquery": "^3.3.1",
+        "jszip": "^3.4.0",
+        "popper.js": "^1.16.1",
+        "raphael": "^2.3.0"
+    }
+}

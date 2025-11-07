@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'mail.reset_password'|trans }}{% endblock %}
+
+{% block body %}
+
+<section class="body-sign">
+    <div class="center-sign">
+        <a href="" class="logo">
+            <img src="{{ asset('build/images/portoadmin/logo_mayaexpress.png') }}" style="width: 150px" alt="" />
+        </a>
+        <div class="panel card-sign">
+            <h1>{{ 'mail.reset_password'|trans }}</h1>
+
+            {{ form_start(resetForm) }}
+            {{ form_row(resetForm.plainPassword) }}
+            <button class="btn btn-primary">{{ 'mail.reset_password'|trans }}</button>
+            {{ form_end(resetForm) }}
+
+        </div>
+
+    </div>
+</section>
+{% endblock %}

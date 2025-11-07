@@ -1,0 +1,36 @@
+backend_admin_global_country_index:
+    path:     /globalcountry
+    controller: App\Controller\GlobalCountryController::indexAction
+    methods:  GET
+
+backend_admin_global_country_show:
+    path:     globalcountry/{id}/show
+    controller: App\Controller\GlobalCountryController::showAction
+    methods:  GET
+
+backend_admin_global_country_new:
+    path:     globalcountry/new
+    controller: App\Controller\GlobalCountryController::newAction
+    #methods:  [GET, POST]
+    
+backend_admin_global_country_create:
+    path:     globalcountry/create
+    controller: App\Controller\GlobalCountryController::createAction
+    requirements: { _method: post }
+
+
+backend_admin_global_country_edit:
+    path:     globalcountry/{id}/edit
+    controller: App\Controller\GlobalCountryController::editAction
+    #methods:  [GET, POST]
+    
+
+backend_admin_global_country_update:
+    path:     globalcountry/{id}/update
+    controller: App\Controller\GlobalCountryController::updateAction
+    requirements: { _method: post|put }     
+
+backend_admin_global_country_delete:
+    path:     globalcountry/{id}/delete
+    controller: App\Controller\GlobalCountryController::deleteAction
+    #methods:  DELETE

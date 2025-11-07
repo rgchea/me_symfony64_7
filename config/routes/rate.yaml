@@ -1,0 +1,53 @@
+rate_index:
+    path:     /rate
+    controller: App\Controller\RateController::indexAction
+    methods:  GET
+
+rate_show:
+    path:     rate/{id}/show
+    controller: App\Controller\RateController::showAction
+    methods:  GET
+
+rate_new:
+    path:     rate/new
+    controller: App\Controller\RateController::newAction
+    #methods:  [GET, POST]
+    
+rate_create:
+    path:     rate/create
+    controller: App\Controller\RateController::createAction
+    methods:  [GET, POST]
+
+rate_edit:
+    path:     rate/{id}/edit
+    controller: App\Controller\RateController::editAction
+    #methods:  [GET, POST]
+    
+rate_update:
+    path:     rate/{id}/update
+    controller: App\Controller\RateController::updateAction
+    methods:  [PUT, POST]
+
+rate_delete:
+    path:     rate/{id}/delete
+    controller: App\Controller\RateController::deleteAction
+    #methods:  DELETE
+
+rate_load:
+    path:     rate/load
+    controller: App\Controller\RateController::loadAction
+    #methods:  DELETE
+
+
+rate_clone:
+    path:     rate/clone
+    controller: App\Controller\RateController::cloneAction
+
+rate_clone_save:
+    path:     rate/cloneSave
+    controller: App\Controller\RateController::cloneSaveAction
+
+rate_list_datatables:
+    path: rate/list/datatables
+    defaults:
+        _controller: App\Controller\RateController::listDatatablesAction

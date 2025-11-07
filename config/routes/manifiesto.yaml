@@ -1,0 +1,71 @@
+manifiesto_index:
+    path:     /manifiesto
+    controller: App\Controller\ManifiestoController::indexAction
+    methods:  [GET, POST]
+
+manifiesto_cancel_by_group:
+    path:     manifiesto/cancelByGroup
+    controller: App\Controller\ManifiestoController::cancelByGroupAction
+    methods:  [GET, POST]
+
+manifiesto_index_sales:
+    path:     manifiesto/sales
+    controller: App\Controller\ManifiestoController::indexSalesAction
+    #methods:  [GET, POST]
+
+    
+manifiesto_index_cancelled:
+    path:     manifiesto/indexCancelled
+    controller: App\Controller\ManifiestoController::indexCancelledAction
+    methods:  [GET, POST]
+    
+manifiesto_show:
+    path:     manifiesto/{id}/show
+    controller: App\Controller\ManifiestoController::showAction
+    methods:  GET
+
+manifiesto_new:
+    path:     manifiesto/new
+    controller: App\Controller\ManifiestoController::newAction
+    methods:  [GET, POST]
+    
+manifiesto_create:
+    path:     manifiesto/create
+    controller: App\Controller\ManifiestoController::createAction
+    methods:  [GET, POST]
+
+manifiesto_edit:
+    path:     manifiesto/{id}/edit
+    controller: App\Controller\ManifiestoController::editAction
+
+manifiesto_group_edit:
+    path:     manifiesto/editGroup
+    controller: App\Controller\ManifiestoController::editGroupAction
+    methods:  [GET, POST]
+
+manifiesto_update:
+    path:     manifiesto/{id}/update
+    controller: App\Controller\ManifiestoController::updateAction
+    methods:  [PUT, POST]
+
+manifiesto_delete:
+    path:     manifiesto/{id}/delete
+    controller: App\Controller\ManifiestoController::deleteAction
+#    methods:  DELETE
+
+manifiesto_cancel_list_datatables:
+    path: manifiesto/cancel/list/datatables
+    defaults:
+        _controller: App\Controller\ManifiestoController::listCancelDatatablesAction
+
+manifiesto_pending_list_datatables:
+    path: manifiesto/pending/list/datatables
+    defaults:
+        _controller: App\Controller\ManifiestoController::listPendingDatatablesAction
+
+manifiesto_sales_list_datatables:
+    path: manifiesto/sales/list/datatables
+    defaults:
+        _controller: App\Controller\ManifiestoController::listSalesDatatablesAction
+
+

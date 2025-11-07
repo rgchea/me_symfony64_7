@@ -1,0 +1,102 @@
+security:
+
+    password_hashers:
+        App\Entity\User:
+            algorithm: auto
+
+    role_hierarchy:
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        api_user_provider:
+            entity:
+                class: App\Entity\User
+                property: username
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: username
+        # used to reload user from session & other features (e.g. switch_user)
+
+
+    # ...
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        # 'main' is the name of the firewall (can be chosen freely)
+        api_login:
+            pattern: ^/api/login_check$
+            stateless: true
+            provider: api_user_provider
+            json_login:
+                check_path: /api/login_check            # the route that handles the POST
+                # optionally:
+                username_path: _username     # <— accept Android payload
+                password_path: _password     # <— accept Android payload
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+
+        api:
+            pattern:  ^/api/v1
+            stateless: true
+            provider: api_user_provider
+            jwt: ~                               # <-- replaces the old guard authenticator
+
+        main:
+            pattern: ^/(?!api)
+            lazy: true
+            provider: app_user_provider
+            form_login:
+                login_path: app_login          # route name of your login GET
+                check_path: app_login          # same route name for POST (new system)
+                enable_csrf: true
+                # Optional but helpful to avoid weird target loops:
+                default_target_path: dashboard # <- change to your real post-login route
+            custom_authenticators:
+                - App\Security\LoginFormAuthenticator
+            entry_point: App\Security\LoginFormAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                target: app_login
+
+            remember_me:
+                secret:   '%kernel.secret%'
+                lifetime: 31536000 # 365 days in seconds
+                path:     /
+                #domain:   ~ # Defaults to the current domain from $_SERVER
+                #user_provider: app_user_provider
+
+            switch_user: true
+
+
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/api/login_check, roles: PUBLIC_ACCESS }
+        - { path: ^/api/login, roles: PUBLIC_ACCESS }
+        - { path: ^/api/app, roles: PUBLIC_ACCESS }
+        - { path: ^/api/v1, roles: IS_AUTHENTICATED_FULLY }
+
+
+        - { path: ^/hello, role: PUBLIC_ACCESS }
+        - { path: ^/login$, role: PUBLIC_ACCESS }
+        - { path: ^/resetpass, role: PUBLIC_ACCESS }
+        - { path: ^/, roles: IS_AUTHENTICATED_FULLY }
+        #- { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, role: ROLE_USER  }
+
+
+

@@ -1,0 +1,301 @@
+
+    <header role="heading">
+        <h2>Formulario de Guía</h2>
+
+    </header>
+
+    <!-- widget div-->
+    <div role="content">
+
+        <!-- widget edit box -->
+        <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+
+        </div>
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+                <h4>Estado: {{ entity.status }}</h4>
+
+                <fieldset>
+
+                <div class="form-group col-md-6">
+                    {{ form_label(form.code) }}
+                    {{ form_errors(form.code) }}
+                    {% if (role == 'ADMINISTRADOR') %}
+                        {{ form_widget(form.code, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    {% else %}
+                        {{ form_widget(form.code, { 'attr': {'class' : 'form-control', 'readonly' : '' } }
+                        ) }}
+                    {% endif %}
+                </div>
+                <div class="form-group col-md-6">
+                    {{ form_label(form.alternateCode) }}
+                    {{ form_errors(form.alternateCode) }}
+                    {% if ( (role == 'ADMINISTRADOR') or (role == 'DIGITADOR')  ) %}
+                        {{ form_widget(form.alternateCode, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    {% else %}
+                        {{ form_widget(form.alternateCode, { 'attr': {'class' : 'form-control', 'readonly' : '' } }
+                        ) }}
+                    {% endif %}
+                </div>
+                <div class="form-group col-md-6">
+                    {{ form_label(form.nit) }}
+                    {{ form_errors(form.nit) }}
+                    {% if ( (role == 'ADMINISTRADOR') or (role == 'DIGITADOR')  ) %}
+                        {{ form_widget(form.nit, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    {% else %}
+                        {{ form_widget(form.nit, { 'attr': {'class' : 'form-control', 'readonly' : '' } }
+                        ) }}
+                    {% endif %}
+                </div>
+                {% if (role == 'ADMINISTRADOR') %}
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.service) }}
+                        {{ form_errors(form.service) }}
+                        {{ form_widget(form.service, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.weight) }}
+                        {{ form_errors(form.weight) }}
+                        {{ form_widget(form.weight, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.price) }}
+                        {{ form_errors(form.price) }}
+                        {{ form_widget(form.price, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                        <input type="hidden" name="backend_adminbundle_guide[commission]" id="backend_adminbundle_guide_commission" value="0">
+                    </div>
+                {% endif %}
+                <div class="clearfix"></div>
+                {% if (role == 'ADMINISTRADOR' or role == 'DIGITADOR') %}
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.senderName) }}
+                        {{ form_errors(form.senderName) }}
+                        {{ form_widget(form.senderName, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.senderAddress) }}
+                        {{ form_errors(form.senderAddress) }}
+                        {{ form_widget(form.senderAddress, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.senderPhone) }}
+                        {{ form_errors(form.senderPhone) }}
+                        {{ form_widget(form.senderPhone, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.receiverName) }}
+                        {{ form_errors(form.receiverName) }}
+                        {{ form_widget(form.receiverName, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.receiverAddress) }}
+                        {{ form_errors(form.receiverAddress) }}
+                        {{ form_widget(form.receiverAddress, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.receiverPhone) }}
+                        {{ form_errors(form.receiverPhone) }}
+                        {{ form_widget(form.receiverPhone, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.sentData) }}
+                        {{ form_errors(form.sentData) }}
+                        {{ form_widget(form.sentData, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                {% endif %}
+
+                {% if (role == 'ADMINISTRADOR' or role == 'DIGITADOR' or role == 'SERVICIO AL CLIENTE' or role == 'VENTAS' or role == "RECEPCION Y GUIAS") %}
+                    <div class="clearfix"></div>
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.smsMessage) }}
+                        {{ form_errors(form.smsMessage) }}
+                        {{ form_widget(form.smsMessage, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                    <div class="clearfix"></div>
+
+                {% endif %}
+
+                <div class="form-group col-md-6">
+                    {{ form_label(form.comment) }}
+                    {{ form_errors(form.comment) }}
+                    {{ form_widget(form.comment, { 'attr': {'class' : 'form-control' } }
+                    ) }}
+                </div>
+
+                {% if (role == 'ADMINISTRADOR' or role == 'SERVICIO AL CLIENTE' or role == 'RECEPCION Y GUIAS') %}
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.newShipping) }}
+                        {{ form_errors(form.newShipping) }}
+                        {{ form_widget(form.newShipping, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+                {% endif %}
+                <div class="clearfix"></div>
+                <div class="form-group col-md-6">
+                    {{ form_label(form.tracking) }}
+                    {{ form_errors(form.tracking) }}
+                    {{ form_widget(form.tracking, { 'attr': {'class' : 'form-control' } }
+                    ) }}
+                </div>
+                <div class="form-group col-md-6">
+                    {{ form_label(form.trackingCharge) }}
+                    {{ form_errors(form.trackingCharge) }}
+                    {{ form_widget(form.trackingCharge, { 'attr': {'class' : 'form-control' } }
+                    ) }}
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-group col-md-6">
+                    {{ form_label(form.fedex) }}
+                    {{ form_errors(form.fedex) }}
+                    {{ form_widget(form.fedex, { 'attr': {'class' : 'form-control' } }
+                    ) }}
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-group col-md-6">
+                    {{ form_label(form.dhl) }}
+                    {{ form_errors(form.dhl) }}
+                    {{ form_widget(form.dhl, { 'attr': {'class' : 'form-control' } }
+                    ) }}
+                </div>
+
+
+
+                {% if (role != 'DIGITADOR') %}
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.status) }}
+                        {{ form_errors(form.status) }}
+                        {{ form_widget(form.status, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+
+
+                {% endif %}
+
+
+                {% if (role == 'ADMINISTRADOR' or role == 'CONTABILIDAD') %}
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.paymentStatus) }}
+                        {{ form_errors(form.paymentStatus) }}
+                        {{ form_widget(form.paymentStatus, { 'attr': {'class' : 'form-control' } }
+                        ) }}
+                    </div>
+
+                {% endif %}
+                <div class="clearfix"></div>
+                {#
+                #}
+                <div class="hide">
+                    {{ form_rest(form) }}
+                </div>
+
+                </fieldset>
+
+                <div class="form-actions">
+                    <a href="{{ path('guide_index') }}" class="btn btn-danger"> Cancelar </a>
+
+                    <button class="btn btn-primary">
+                        <i class="fa fa-save"></i>
+                        Guardar
+                    </button>
+                </div>
+
+            <!--</form>-->
+            {{ form_end(form) }}
+
+        </div>
+        <!-- end widget content -->
+
+    </div>
+    <!-- end widget div -->
+
+    <script type="text/javascript" language="Javascript">
+
+        //backend_adminbundle_guide_receiverPhone
+        //$("#form_read").validate();
+
+        $( document ).ready(function() {
+
+
+            $("[name='backend_adminbundle_guide']").validate();
+
+            if($("#backend_adminbundle_guide_receiverPhone").val() != "N/A"){
+                $("#backend_adminbundle_guide_receiverPhone").rules("add", {digits:true, minlength:10, maxlength:10});
+            }
+
+            $("#backend_adminbundle_guide_smsMessage").rules("add", {required:false, minlength:10, maxlength:160});
+            $("#backend_adminbundle_guide_dhl").rules("add", {minlength:10, maxlength:10});
+
+
+        });
+
+        $("#backend_adminbundle_guide_service").change(function() {
+            changePrice();
+        });
+
+        $("#backend_adminbundle_guide_weight").change(function() {
+            changePrice();
+        });
+
+
+
+        function changePrice(){
+
+                $('#pizote_spinner').show();
+
+                var returnValue = 1;
+
+                $.ajax({
+                    type:"POST",
+                    dataType:"json",
+                    async: true,
+                    url:"{{ path('guide_change_price') }}",
+                    data:{service: $("#backend_adminbundle_guide_service").val(), category: "{{entity.manifiesto.dealer.category.id}}", weight: $("#backend_adminbundle_guide_weight").val() },
+                    success:function(data){
+
+                        if (data.data == "1"){
+
+                            $("#backend_adminbundle_guide_price").val(data.price.toFixed(2));
+                            $("#backend_adminbundle_guide_commission").val(data.commission.toFixed(2));
+                        }else{
+                            alert("No se encontró tarifa para servicio, categoría y peso. Deberá ingregar peso manual o actualizar tabla de tarífas.");
+
+                        }
+
+                        returnValue = parseInt(data.data);
+                    }
+                });
+
+                $('#pizote_spinner').hide();
+                return returnValue;
+
+
+        }
+
+
+    </script>

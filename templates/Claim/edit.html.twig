@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+{{ parent() }}
+<li> <a href="{{ path('backend_admin_claim_index') }}">Listado de Reclamos Pendientes</a> </li>
+<li> <a href="{{ path('backend_admin_claim_edit', { 'id': entity.id }) }}">Revisión de Reclamo</a> </li>
+{% endblock %}
+
+{% block myContent %}
+    {{ parent() }}
+    {{ include('Claim/form.html.twig') }}
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li><a href="#">Inventario</a></li>
+    <li> <a href="{{ path('backend_admin_inventoryorder_index') }}">Listado de Ordenes de compra</a> </li>
+    <li> <a href="{{ path('backend_admin_inventoryorder_edit', { 'id': entity.id }) }}">Ver Orden de compra</a> </li>
+{% endblock %}
+
+{% block myContent %}
+    {{ parent() }}
+    {{ include('InventoryOrder/form.html.twig') }}
+{% endblock %}
+

@@ -1,0 +1,34 @@
+service_index:
+    path:     /service
+    controller: App\Controller\ServiceController::indexAction
+    methods:  GET
+
+service_show:
+    path:     service/{id}/show
+    controller: App\Controller\ServiceController::showAction
+    methods:  GET
+
+service_new:
+    path:     service/new
+    controller: App\Controller\ServiceController::newAction
+#    methods:  [GET, POST]
+
+service_create:
+    path:     service/create
+    controller: App\Controller\ServiceController::createAction
+    methods:  [GET, POST]
+    
+service_edit:
+    path:     service/{id}/edit
+    controller: App\Controller\ServiceController::editAction
+#    methods:  [GET, POST]
+    
+service_update:
+    path:     service/{id}/update
+    controller: App\Controller\ServiceController::updateAction
+    methods:  [PUT, POST]
+
+service_delete:
+    path:     service/{id}/delete
+    controller: App\Controller\ServiceController::deleteAction
+#    methods:  DELETE

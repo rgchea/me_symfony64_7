@@ -1,0 +1,34 @@
+bank_index:
+    path:     /bank
+    controller: App\Controller\BankController::indexAction
+    methods:  GET
+
+bank_show:
+    path:     bank/{id}/show
+    controller: App\Controller\BankController::showAction
+    methods:  GET
+
+bank_new:
+    path:     bank/new
+    controller: App\Controller\BankController::newAction
+    #methods:  [GET, POST]
+    
+bank_create:
+    path:     bank/create
+    controller: App\Controller\BankController::createAction
+    methods:  [GET, POST]
+
+bank_edit:
+    path:     bank/{id}/edit
+    controller: App\Controller\BankController::editAction
+    #methods:  [GET, POST]
+    
+bank_update:
+    path:     bank/{id}/update
+    controller: App\Controller\BankController::updateAction
+    methods:  [PUT, POST]
+
+bank_delete:
+    path:     bank/{id}/delete
+    controller: App\Controller\BankController::deleteAction
+    #methods:  DELETE

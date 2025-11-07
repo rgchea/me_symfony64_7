@@ -1,0 +1,101 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li> <a href="{{ path('report_claim_consolidated') }}">Consolidado de Reclamos</a> </li>
+    {% endblock %}
+
+{% block title %}
+    Consolidado de Reclamos
+{% endblock %}
+
+
+{% block myContent %}
+    {{ parent() }}
+	   
+	<style>
+	    .input-group {
+	        z-index: 0;
+	    }
+	</style>
+	
+	<div class="row">
+            <article class="col-sm-12 col-md-12 col-lg-12 sortable-grid ui-sortable">
+                <div data-widget-editbutton="false" data-widget-colorbutton="false" id="wid-id-2" class="jarviswidget jarviswidget-sortable" style="" role="widget">
+                    <header role="heading">
+                        <h2>Consolidado de Reclamos</h2>
+
+                    </header>
+                    <!-- widget div-->
+                    <div role="content">
+                    <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                        <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <form id="filterForm" name="filterForm" action="{{path('report_claim_consolidated')}}" method="POST" >
+                                <input type="hidden" name="filter" value="true" />
+                                <div class="form-group row" >
+                                    <div class="col-md-4">
+                                        <label for="select_dealer">Estado:</label><br />
+                                        <select class="form-control" id="filter_claim_status" name="filter_claim_status"  >
+                                            <option {{ filter_claim_status == 'Todos' ? ' selected="selected" ' : '' }} value="Todos">Todos</option>
+                                            <option {{ filter_claim_status == 'Pendiente' ? ' selected="selected" ' : '' }} value="Pendiente">Pendiente</option>
+                                            <option {{ filter_claim_status == 'Autorizado' ? ' selected="selected" ' : '' }} value="Autorizado">Autorizado</option>
+                                            <option {{ filter_claim_status == 'No Autorizado' ? ' selected="selected" ' : '' }} value="No Autorizado">No Autorizado</option>
+
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="select_service">Tipo:</label><br />
+                                        <select class="form-control" id="filter_claim_type" name="filter_claim_type">
+                                            <option value="0">Todos</option>
+                                            {% for ct in claimTypes %}
+                                                {% set selected = ct.id == filter_claim_type ? ' selected="selected" ' : ''%}
+                                                <option value="{{ct.id}}" {{selected}}>{{ ct.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-4">
+                                        <label for="created_from">Desde:</label><br />
+                                        <input id="created_from" name="created_from" type="date" class="form-control" value="{{filter_created_from}}" />
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="created_to">Hasta:</label><br />
+                                        <input id="created_to" name="created_to" type="date" class="form-control" value="{{filter_created_to}}" />
+
+                                    </div>
+
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary">
+                                        <i class="fa fa-search"></i>
+                                        Filtrar
+                                    </button>
+
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </form>
+                            <br />
+                        </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <div class="clearfix"></div>
+            </article>
+	</div>
+	
+	<script type="text/javascript" language="Javascript">
+
+
+	</script>  
+   
+{% endblock %}

@@ -1,0 +1,215 @@
+
+			<header role="heading">
+
+				{% if edit is defined %}
+					<h2>Orden de compra #{{ entity.id }}</h2>
+				{% else %}
+					<h2>Formulario de productos</h2>
+				{% endif %}
+
+			</header>
+
+			<!-- widget div-->
+			<div role="content">
+
+				<!-- widget edit box -->
+				<div class="jarviswidget-editbox">
+					<!-- This area used as dropdown edit box -->
+
+				</div>
+				<!-- end widget edit box -->
+
+				<!-- widget content -->
+				<div class="widget-body">
+
+
+					{% if edit is defined %}
+						<form method="POST" id="orderForm" action="{{ path('backend_admin_inventoryorder_update', {id: entity.id}) }}">
+							<input type="hidden" name="authValue" id="authValue">
+					{% else %}
+						<form method="POST" id="orderForm" action="{{ path('backend_admin_inventoryorder_create') }}">
+					{% endif %}
+
+
+						<fieldset>
+
+							{% if edit is not defined %}
+								<div class="col-md-3 pull-left">
+									<button type="button" class="btn btn-info" onclick="addProduct()"> Agregar producto </button>
+								</div>
+
+							{% endif %}
+							<div class="clearfix"></div>
+							<br/>
+							<div class="form-group col-md-12">
+
+								<table width="100%" id="productsTable">
+									<thead>
+										<tr>
+											<th width="60%">Producto</th>
+											<th width="30%">Cantidad</th>
+											<th width="10%"></th>
+										</tr>
+									</thead>
+									<tbody>
+										{% if edit is defined %}
+											{% for p in orderProduct %}
+												<tr>
+													<td>{{ p.inventoryProduct.name }}</td>
+													<td>{{ p.quantity }}</td>
+													<td>&nbsp;</td>
+												</tr>
+
+											{% endfor %}
+										{% endif %}
+
+									</tbody>
+								</table>
+							</div>
+							<br/>
+
+
+							{% if edit is defined %}
+								<div class="form-group col-md-12">
+									<label>Comentario:</label><br/>
+									<textarea class="form-control" name="comment">{{ entity.comment }}</textarea>
+								</div>
+								<div class="clearfix"></div>
+
+
+								{% if entity.status == "Autorizada" %}
+									<div class="form-group col-md-6">
+										<label># Factura:</label><br/>
+										<input type="text" name="invoiceNumber"  id="invoiceNumber" required class="form-control">
+									</div>
+
+									<div class="form-group col-md-6">
+										<label>Monto de Factura:</label><br/>
+										<input type="number" step="any" name="invoiceAmount"  id="invoiceAmount" required class="form-control">
+									</div>
+								{% endif %}
+
+
+								{% if entity.status == "Finalizada" %}
+									<div class="form-group col-md-6">
+										<label># Factura: {{ entity.invoiceNumber }}</label><br/>
+
+									</div>
+
+								{% endif %}
+
+							{% else %}
+								<div class="form-group col-md-12">
+									<label>Comentario:</label><br/>
+									<textarea class="form-control" name="comment"></textarea>
+								</div>
+
+							{% endif %}
+
+
+
+						</fieldset>
+							{% if edit is defined %}
+
+								{% if entity.status == "Pendiente" %}
+									{% if role == "ADMINISTRADOR" %}
+
+										<div class="form-actions">
+											<button type="button" onclick="authOrder(1)" class="btn btn-primary">
+												Autorizar
+											</button>
+
+											<button type="button" onclick="authOrder(0)" class="btn btn-danger">
+												Rechazar
+											</button>
+										</div>
+
+									{% endif %}
+								{% endif %}
+
+								{% if entity.status == "Autorizada" %}
+
+									<div class="form-actions">
+										<button type="submit" class="btn btn-success">
+											<i class="fa fa-save"></i>
+											Finalizar
+										</button>
+									</div>
+								{% endif %}
+							{% else %}
+								<br/>
+								<div class="form-actions">
+									<a href="{{ path('backend_admin_inventoryproduct_index') }}" class="btn btn-danger"> Cancelar </a>
+
+									<button type="submit" class="btn btn-primary">
+										<i class="fa fa-save"></i>
+										Guardar
+									</button>
+								</div>
+
+							{% endif  %}
+
+					</form>
+
+				</div>
+				<!-- end widget content -->
+
+			</div>
+			<!-- end widget div -->
+
+
+
+<script type="text/javascript" language="JavaScript">
+
+	var strProductOptions = '';
+
+	{% for p in products  %}
+		strProductOptions += '<option value="{{ p.id }}">{{ p.name }}</option>';
+	{% endfor %}
+
+	function addProduct(){
+
+		strProductSelect = '<select name="products[]" class="form-control">'+strProductOptions+'</select>';
+		strProductQuantity = '<td width="30%"><input name="quantity[]" required  type="number" value="1" class="form-control"></td>';
+		strProductDelete = '<td width="10%"><a class="btn btn-danger btn-sm pull-right" style="color:#FFF" onclick="this.parentElement.parentElement.remove();"><i class=\'fa fa-trash\'></i></a></td>';
+
+		$("#productsTable tbody").append('<tr><td width="60%">'+strProductSelect+'</td>'+strProductQuantity+strProductDelete+'</tr>');
+		console.log(strProductOptions);
+
+	}
+
+
+	function authOrder(authValue){
+
+		$("#authValue").val(authValue);
+		$('#pizote_spinner').show();
+		$("#orderForm").submit();
+
+	}
+
+
+	$( document ).ready(function() {
+
+
+		{% if edit is not defined %}
+			addProduct();
+		{% endif %}
+
+
+		$('#orderForm').on("submit", function(){
+			//Code: Action (like ajax...)
+			if($("#orderForm").valid()){
+
+				$('#pizote_spinner').show();
+				return true;
+
+			}
+			else{
+				$('#pizote_spinner').hide();
+				return false;
+			}
+
+		});
+	});
+
+</script>

@@ -1,0 +1,41 @@
+backend_admin_inventoryproduct_index:
+  path:     /inventoryproduct
+  controller: App\Controller\InventoryProductController::indexAction
+  methods:  GET
+
+backend_admin_inventoryproduct_new:
+  path:     inventoryproduct/new
+  controller: App\Controller\InventoryProductController::newAction
+  #    methods:  [GET, POST]
+
+backend_admin_inventoryproduct_create:
+  path:     inventoryproduct/create
+  controller: App\Controller\InventoryProductController::createAction
+  methods:  [GET, POST]
+
+backend_admin_inventoryproduct_edit:
+  path:     inventoryproduct/{id}/edit
+  controller: App\Controller\InventoryProductController::editAction
+  #    methods:  [GET, POST]
+
+backend_admin_inventoryproduct_update:
+  path:     inventoryproduct/{id}/update
+  controller: App\Controller\InventoryProductController::updateAction
+  methods:  [PUT, POST]
+
+backend_admin_inventoryproduct_delete:
+  path:     inventoryproduct/{id}/delete
+  controller: App\Controller\InventoryProductController::deleteAction
+#    methods:  DELETE
+
+
+inventoryproduct_list_datatables:
+  path: inventoryproduct/list/datatables
+  defaults:
+    _controller: App\Controller\InventoryProductController::listDatatablesAction
+
+
+backend_admin_inventoryproduct_unload:
+  path:     inventoryproduct/unload
+  controller: App\Controller\InventoryProductController::unloadAction
+  #methods:  [GET, POST]

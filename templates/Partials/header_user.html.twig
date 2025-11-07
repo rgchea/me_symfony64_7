@@ -1,0 +1,41 @@
+<div id="userbox" class="userbox">
+    <a href="#" data-toggle="dropdown">
+        {#
+        <figure class="profile-picture">
+            <img src="" alt="Joseph Doe" class="rounded-circle" data-lock-picture="" />
+        </figure>
+
+        #}
+        <div class="profile-info" data-lock-name="John Doe" data-lock-email="">
+            {% set userLogged =  app.session.get('userLogged') %}
+            <span class="name">{{ userLogged.name }}</span>
+            <span class="role">{{ userLogged.role.name }}</span>
+        </div>
+
+        <i class="fa custom-caret"></i>
+    </a>
+
+    <div class="dropdown-menu">
+        <ul class="list-unstyled mb-2">
+            <li class="divider"></li>
+            {% if is_granted('ROLE_PREVIOUS_ADMIN') %}
+                <li>
+                    <a role="menuitem" tabindex="-1" href="{{ path('backend_admin_homepage', {'_switch_user': '_exit'}) }}">{{ 'label_exit_impersonation'|trans }}</a>
+                </li>
+            {% endif %}
+
+            <li>
+                <a role="menuitem" tabindex="-1" href="{{ path('backend_admin_user_edit', { 'id': userLogged.id }) }}"><i class="fas fa-user"></i>{{ 'label_menu.profile'|trans }}</a>
+            </li>
+            {#
+            <li>
+                <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fas fa-lock"></i> Lock Screen</a>
+            </li>
+
+            #}
+            <li>
+                <a role="menuitem" tabindex="-1" href="{{ path('app_logout') }}"><i class="fas fa-power-off"></i> Logout</a>
+            </li>
+        </ul>
+    </div>
+</div>

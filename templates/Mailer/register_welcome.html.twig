@@ -1,0 +1,16 @@
+{% extends 'Mailer/email.html.twig' %}
+
+{% block myTitle %}
+    {{ 'label_welcome'|trans }}
+{% endblock %}
+
+{% block myContent %}
+
+    {{ intro }}<br>
+    {{ access }}<br>
+    {{ 'label_email'|trans }}: {{ email_access }}<br>
+    {{ 'label_login_password'|trans }}: {{ password }}<br>
+
+    <a href="{{ link }}">Puedes ingresar haciendo Click aquí</a>
+
+{% endblock %}

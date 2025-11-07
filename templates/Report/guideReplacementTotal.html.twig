@@ -1,0 +1,179 @@
+{% extends "base.html.twig" %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li> <a href="{{ path('report_guidereplacementtotal') }}">Reporte de Reposición de Guías</a> </li>
+    {% endblock %}
+
+{% block title %}
+    Reporte de Reposición de Guías
+{% endblock %}
+
+
+{% block myContent %}
+{{ parent() }}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+
+    </div>
+</div>
+
+<div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+    <header>
+        <h2>Reporte de Reposición de Guías</h2>
+    </header>
+
+    <!-- widget div-->
+    <div>
+
+        <!-- widget edit box -->
+        <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+
+        </div>
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body no-padding">
+            <div class="widget-body-toolbar">
+                <div class="widget-body">
+                    <form id="filterForm" action="{{path('report_guidereplacementtotal')}}" method="POST" name="form_claim">
+                        <input type="hidden" name="filter" value="true" />
+                        <div class="form-group row" >
+                            <div class="col-md-4">
+                                <label for="filter_dealer">Concesionario:</label><br />
+                                <select class="form-control" id="filter_dealer" name="filter_dealer"  >
+
+                                    <option value="0" {{ filter_dealer == 0 ? 'selected' : '' }}>Todos</option>
+                                    {% for dealer in dealers %}
+                                        {% set selectedDealer = dealer.id == filter_dealer ? 'selected' : '' %}
+                                        <option value="{{ dealer.id }}" {{ selectedDealer }}>{{ dealer.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="filter_service">Servicio:</label><br />
+                                <select class="form-control" id="filter_service" name="filter_service"  >
+
+                                    <option value="0" {{ filter_service == 0 ? 'selected' : '' }}>Todos</option>
+                                    {% for service in services %}
+                                        {% set selectedService = service.id == filter_service ? 'selected' : '' %}
+                                        <option value="{{ service.id }}" {{ selectedService }}>{{ service.name }}</option>
+                                    {% endfor %}
+
+                                </select>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="col-md-4">
+                                <label for="filter_created_from">Desde:</label><br />
+                                <input  id="filter_created_from" name="filter_created_from" type="date" class="form-control input-daterange" value="{{filter_created_from}}" />
+
+                            </div>
+                            <div class="col-md-4">
+                                <label for="filter_created_to">Hasta:</label><br />
+                                <input  id="filter_created_to" name="filter_created_to" type="date" class="form-control input-daterange" value="{{filter_created_to}}" />
+
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-4">
+                                <label for="apply_dates">Aplicar Fechas:</label><br />
+                                <input type="checkbox" class="" name="filter_dates" id="filter_dates" {{ filter_dates == 1 ? 'checked' : '' }}>
+                            </div>
+
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-2">
+                            <button class="btn btn-primary">
+                                <i class="fa fa-search"></i>
+                                Filtrar
+                            </button>
+
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </form>
+                    <br />
+
+                </div>
+            </div>
+
+            <table id="dt_basic" class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                    	<th>Guía</th>
+                    	<th>Status</th>
+                        <th>Concesionario</th>
+                        <th>Servicio Guía Original</th>
+                        <th>Precio Guía Original</th>
+                        <th>Reposición</th>
+                        <th>Compra de Producto</th>
+                        <th>Valor Compra de Producto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% set myTotalGuides = 0 %}
+                {% set myProductPurchaseTotal = 0 %}
+                {% for entity in entities %}
+                    <tr>
+                        <td>{{ entity.code }}</td>
+                        <td>{{ entity.status }}</td>
+                        <td>{{ entity.manifiesto.dealer }}</td>
+                        <td>{{ entity.service.name }}</td>
+                        <td style="text-align: right">{{ entity.price|number_format(2, '.', '') }}</td>
+                        {% set myTotalGuides = myTotalGuides + entity.price %}
+                        <td>{{ entity.claim.replacement == 1 ? "Si" : "No" }}</td>
+                        <td>{{ entity.claim.productPurchase == 1 ? "Si" : "No" }}</td>
+                        <td style="text-align: right">{{ entity.claim.productPurchaseAmount|number_format(2, '.', '') }}</td>
+                        {% set myProductPurchaseTotal = myProductPurchaseTotal + entity.claim.productPurchaseAmount  %}
+                        
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="4"><b>Totales</b></td>
+                    <td style="text-align: right">{{ myTotalGuides|number_format(2, '.', '') }}</td>
+                    <td colspan="2">&nbsp;</td>
+                    <td style="text-align: right">{{ myProductPurchaseTotal|number_format(2, '.', '') }}</td>
+
+                </tr>
+
+                </tfoot>
+
+            </table>
+
+
+        </div>
+        <!-- end widget content -->
+
+        
+
+    </div>
+    <!-- end widget div -->
+    
+</div>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $('#dt_basic').DataTable({
+                "aaSorting": [[ 0, "asc" ]],
+            });
+
+        });
+
+
+
+    </script>
+
+{% endblock %}
+
+
+{% block extrascripts %}
+
+    
+
+{% endblock %}

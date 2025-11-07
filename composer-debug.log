@@ -1,0 +1,487 @@
+Running 2.8.12 (2025-09-19 13:41:59) with PHP 8.3.14 on Darwin / 21.6.0
+Reading ./composer.json (/Applications/MAMP/htdocs/mayaexpress/work_process_new/composer.json)
+Loading config file /Users/renatochea/.composer/config.json
+Loading config file /Users/renatochea/.composer/auth.json
+Loading config file ./composer.json (/Applications/MAMP/htdocs/mayaexpress/work_process_new/composer.json)
+Checked CA file /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem does not exist or it is not a file.
+Checked directory /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem does not exist or it is not a directory.
+Checked CA file /etc/pki/tls/certs/ca-bundle.crt does not exist or it is not a file.
+Checked directory /etc/pki/tls/certs/ca-bundle.crt does not exist or it is not a directory.
+Checked CA file /etc/ssl/certs/ca-certificates.crt does not exist or it is not a file.
+Checked directory /etc/ssl/certs/ca-certificates.crt does not exist or it is not a directory.
+Checked CA file /etc/ssl/ca-bundle.pem does not exist or it is not a file.
+Checked directory /etc/ssl/ca-bundle.pem does not exist or it is not a directory.
+Checked CA file /usr/ssl/certs/ca-bundle.crt does not exist or it is not a file.
+Checked directory /usr/ssl/certs/ca-bundle.crt does not exist or it is not a directory.
+Checked CA file /opt/local/share/curl/curl-ca-bundle.crt does not exist or it is not a file.
+Checked directory /opt/local/share/curl/curl-ca-bundle.crt does not exist or it is not a directory.
+Checked CA file /usr/local/share/curl/curl-ca-bundle.crt does not exist or it is not a file.
+Checked directory /usr/local/share/curl/curl-ca-bundle.crt does not exist or it is not a directory.
+Checked CA file /usr/share/ssl/certs/ca-bundle.crt does not exist or it is not a file.
+Checked directory /usr/share/ssl/certs/ca-bundle.crt does not exist or it is not a directory.
+Checked CA file /private/etc/ssl/cert.pem: valid
+Executing command (/Applications/MAMP/htdocs/mayaexpress/work_process_new): 'git' 'branch' '-a' '--no-color' '--no-abbrev' '-v'
+Executing command (/Applications/MAMP/htdocs/mayaexpress/work_process_new): 'git' 'describe' '--exact-match' '--tags'
+Executing command (/Applications/MAMP/htdocs/mayaexpress/work_process_new): 'git' 'log' '--pretty=%H' '-n1' 'HEAD' '--no-show-signature'
+Executing command (/Applications/MAMP/htdocs/mayaexpress/work_process_new): 'hg' 'branch'
+Executing command (/Applications/MAMP/htdocs/mayaexpress/work_process_new): 'fossil' 'branch' 'list'
+Executing command (/Applications/MAMP/htdocs/mayaexpress/work_process_new): 'fossil' 'tag' 'list'
+Executing command (/Applications/MAMP/htdocs/mayaexpress/work_process_new): 'svn' 'info' '--xml'
+Failed to initialize global composer: Composer could not find the config file: /Users/renatochea/.composer/composer.json
+
+Reading ./composer.lock (/Applications/MAMP/htdocs/mayaexpress/work_process_new/composer.lock)
+Installing dependencies from lock file (including require-dev)
+Verifying lock file contents can be installed on current platform.
+Reading ./composer.lock (/Applications/MAMP/htdocs/mayaexpress/work_process_new/composer.lock)
+Built pool.
+Generating rules
+Resolving dependencies through SAT
+Looking at all rules.
+
+Dependency resolution completed in 0.003 seconds
+Package operations: 145 installs, 0 updates, 0 removals
+Installs: symfony/flex:v2.8.2, symfony/runtime:v6.4.26, chriskonnertz/string-calc:v1.0.12, symfony/deprecation-contracts:v3.6.0, symfony/routing:v6.4.26, symfony/polyfill-mbstring:v1.33.0, symfony/polyfill-php83:v1.33.0, symfony/http-foundation:v6.4.26, psr/event-dispatcher:1.0.0, symfony/event-dispatcher-contracts:v3.6.0, symfony/event-dispatcher:v7.3.3, symfony/var-dumper:v7.3.4, psr/log:3.0.2, symfony/error-handler:v6.4.26, symfony/http-kernel:v6.4.26, symfony/finder:v6.4.24, symfony/filesystem:v6.4.24, symfony/var-exporter:v7.3.4, psr/container:2.0.2, symfony/service-contracts:v3.6.0, symfony/dependency-injection:v6.4.26, symfony/config:v6.4.26, psr/cache:3.0.0, symfony/cache-contracts:v3.6.0, symfony/cache:v6.4.26, symfony/framework-bundle:v6.4.26, symfony/stopwatch:v7.3.0, symfony/polyfill-intl-normalizer:v1.33.0, symfony/polyfill-intl-grapheme:v1.33.0, symfony/string:v7.3.4, symfony/console:v6.4.26, doctrine/event-manager:2.0.1, doctrine/deprecations:1.1.5, doctrine/dbal:3.10.2, doctrine/migrations:3.9.4, doctrine/persistence:3.4.1, symfony/doctrine-bridge:v7.3.4, doctrine/sql-formatter:1.5.2, doctrine/doctrine-bundle:2.16.2, doctrine/doctrine-migrations-bundle:3.4.2, doctrine/lexer:3.0.1, doctrine/instantiator:2.0.0, doctrine/inflector:2.1.0, doctrine/common:3.5.0, symfony/polyfill-php84:v1.33.0, doctrine/collections:2.3.0, doctrine/cache:2.2.0, doctrine/orm:2.20.6, willdurand/negotiation:3.1.0, willdurand/jsonp-callback-validator:v2.0.0, symfony/password-hasher:v7.3.0, symfony/security-core:v7.3.4, friendsofsymfony/rest-bundle:3.8.0, paragonie/random_compat:v9.99.100, paragonie/constant_time_encoding:v3.1.3, phpseclib/phpseclib:3.0.46, monolog/monolog:3.9.0, ralouphie/getallheaders:3.0.3, psr/http-message:2.0, psr/http-factory:1.1.0, guzzlehttp/psr7:2.8.0, psr/http-client:1.0.3, guzzlehttp/promises:2.3.0, guzzlehttp/guzzle:7.10.0, firebase/php-jwt:v6.11.1, google/auth:v1.48.0, google/apiclient-services:v0.414.0, google/apiclient:v2.18.3, phpstan/phpdoc-parser:2.3.0, jms/metadata:2.8.0, jms/serializer:3.32.5, jms/serializer-bundle:5.5.1, symfony/translation-contracts:v3.6.0, symfony/property-info:v6.4.24, symfony/property-access:v6.4.25, symfony/security-http:v7.3.4, symfony/security-csrf:v7.3.0, psr/clock:1.0.0, symfony/clock:v7.3.0, symfony/security-bundle:v6.4.26, symfony/polyfill-php56:v1.20.0, namshi/jose:7.2.3, lcobucci/jwt:5.5.0, lcobucci/clock:3.3.1, lexik/jwt-authentication-bundle:v2.21.0, symfony/yaml:v6.4.26, nikic/php-parser:v5.6.1, zircote/swagger-php:5.4.0, symfony/options-resolver:v7.3.3, phpdocumentor/reflection-common:2.2.0, phpdocumentor/type-resolver:1.10.0, webmozart/assert:1.11.0, phpdocumentor/reflection-docblock:5.6.3, nelmio/api-doc-bundle:v4.38.2, psr/simple-cache:3.0.0, markbaker/matrix:3.0.1, markbaker/complex:3.0.2, maennchen/zipstream-php:3.2.0, ezyang/htmlpurifier:v4.18.0, composer/pcre:3.3.2, phpoffice/phpspreadsheet:1.30.0, tecnickcom/tcpdf:6.10.0, qipsius/tcpdf-bundle:2.0.3, doctrine/annotations:2.0.2, sensio/framework-extra-bundle:v6.2.10, masterminds/html5:2.10.0, symfony/dom-crawler:v7.3.3, symfony/browser-kit:v6.4.24, symfony/css-selector:v6.4.24, twig/twig:v3.21.1, symfony/twig-bridge:v6.4.25, symfony/debug-bundle:v6.4.13, symfony/dotenv:v6.4.24, symfony/expression-language:v6.4.24, symfony/polyfill-intl-icu:v1.33.0, symfony/form:v6.4.26, symfony/polyfill-intl-idn:v1.33.0, symfony/mime:v7.3.4, egulias/email-validator:4.0.4, symfony/mailer:v6.4.26, symfony/google-mailer:v6.4.13, symfony/http-client-contracts:v3.6.0, symfony/intl:v6.4.26, symfony/process:v6.4.26, symfony/maker-bundle:v1.64.0, symfony/monolog-bridge:v7.3.4, symfony/monolog-bundle:v3.10.0, symfony/phpunit-bridge:v6.4.26, symfony/serializer:v6.4.26, symfony/translation:v6.4.26, symfony/notifier:v7.3.3, symfony/http-client:v6.4.26, symfony/twilio-notifier:v6.4.24, symfony/validator:v6.4.26, psr/link:2.0.1, symfony/web-link:v6.4.24, symfony/twig-bundle:v6.4.24, symfony/web-profiler-bundle:v6.4.25, symfony/asset:v6.4.24, symfony/webpack-encore-bundle:v2.3.0, symfony/webpack-encore-pack:v1.0.2, symfonycasts/reset-password-bundle:v1.23.2, symplify/config-transformer:12.4.3, twig/extra-bundle:v3.21.0, twilio/sdk:8.8.2
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/flex/b7edf00101b84b98e23cebe1751663b83b2bc2f8.zip from cache
+  - Loading symfony/flex (v2.8.2) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/runtime/cea60a559b0d7dc746dfafaebdaa6224c0674869.zip from cache
+  - Loading symfony/runtime (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/chriskonnertz/string-calc/0c965e93d92bac94436ab849ed05d57c8e4e4901.zip from cache
+  - Loading chriskonnertz/string-calc (v1.0.12) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/deprecation-contracts/dfc31d200075ad19b62edc80db7cf393e42a752e.zip from cache
+  - Loading symfony/deprecation-contracts (v3.6.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/routing/737b7c0f86af4f2712f6e15b58555101d7337b9e.zip from cache
+  - Loading symfony/routing (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/polyfill-mbstring/4a27f8b9ff70570be237bcfd23ca14fcd9fff8e0.zip from cache
+  - Loading symfony/polyfill-mbstring (v1.33.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/polyfill-php83/58f6b5fa927ea8a27dec838fa03d568ab07bc0d5.zip from cache
+  - Loading symfony/polyfill-php83 (v1.33.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/http-foundation/0386856854ea34a36d835004f94ecb704e472b07.zip from cache
+  - Loading symfony/http-foundation (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/psr/event-dispatcher/8f60a8cd1b7ff4e8f9782d70d78dee877a526529.zip from cache
+  - Loading psr/event-dispatcher (1.0.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/event-dispatcher-contracts/d545b055747fbe7e21474979be0fb6654a624d6c.zip from cache
+  - Loading symfony/event-dispatcher-contracts (v3.6.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/event-dispatcher/7c554ace8e92e12fdce6d4efa3eaffacfafa6ab4.zip from cache
+  - Loading symfony/event-dispatcher (v7.3.3) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/var-dumper/13b47ebb55ade778eac3d42a7744b814892b04f4.zip from cache
+  - Loading symfony/var-dumper (v7.3.4) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/psr/log/2961e31604f4f4de116b458f772c4aa21861c5b4.zip from cache
+  - Loading psr/log (3.0.2) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/error-handler/2089122388a78fc195b52128ee87827b43840de2.zip from cache
+  - Loading symfony/error-handler (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/http-kernel/4c8610bd90462060a535a8f6ef2039102016c86e.zip from cache
+  - Loading symfony/http-kernel (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/finder/c61cf9e88c1c92142c6a03c51459561599263a88.zip from cache
+  - Loading symfony/finder (v6.4.24) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/filesystem/ffaa62ec324c004218778ed44c58a1ac4789b36b.zip from cache
+  - Loading symfony/filesystem (v6.4.24) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/var-exporter/7c72bf2f7431c8ef3433c2f574b6bb596f3af53d.zip from cache
+  - Loading symfony/var-exporter (v7.3.4) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/psr/container/a0a43e15cb16e3ab95a991e1bffc813474b15cdf.zip from cache
+  - Loading psr/container (2.0.2) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/service-contracts/a0223ee8a9c3c0052037b408115e6fc47b863b28.zip from cache
+  - Loading symfony/service-contracts (v3.6.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/dependency-injection/e3a989b73d70fea2886ba5c46ffae02517889686.zip from cache
+  - Loading symfony/dependency-injection (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/config/d382019d14b29d6214012de5d9473b893da17dfd.zip from cache
+  - Loading symfony/config (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/psr/cache/b7eac5d329f3f43db02b28fa0fef1a15080f3536.zip from cache
+  - Loading psr/cache (3.0.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/cache-contracts/c781a0cdc14ee8d3b9ec6013c9d2b2ec2eadda20.zip from cache
+  - Loading symfony/cache-contracts (v3.6.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/cache/9d4dd97a6bca9eaadd3bb41bc1d63333d30574f2.zip from cache
+  - Loading symfony/cache (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/framework-bundle/7f8d716a0145e18e4e2f06e8a311517fa7b9be94.zip from cache
+  - Loading symfony/framework-bundle (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/stopwatch/95cf1ee82e3924ef5158452822580b0af907b359.zip from cache
+  - Loading symfony/stopwatch (v7.3.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/polyfill-intl-normalizer/7a827f163e8095d00cb2eec5307910ceaf9f3260.zip from cache
+  - Loading symfony/polyfill-intl-normalizer (v1.33.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/polyfill-intl-grapheme/034616cbe3b3030f2c4bc822b1ee8cd9dc94d0e8.zip from cache
+  - Loading symfony/polyfill-intl-grapheme (v1.33.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/string/3e6fbb3a4aa2d5ff8c298d0a566cb7b1713ee97c.zip from cache
+  - Loading symfony/string (v7.3.4) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/console/de42709e2dfe831bf4a5e910fece0df7b229274c.zip from cache
+  - Loading symfony/console (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/event-manager/08745f3a30fb52c2631358d45e55dccf0b425365.zip from cache
+  - Loading doctrine/event-manager (2.0.1) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/deprecations/d58309d3e2b32801668bd3ad785755224469cafa.zip from cache
+  - Loading doctrine/deprecations (1.1.5) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/dbal/86c7d5337147c034ee1c281a5934ffbb553578f6.zip from cache
+  - Loading doctrine/dbal (3.10.2) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/migrations/43fb337f83974018d6d1f07bc9d51383c7d2cfe0.zip from cache
+  - Loading doctrine/migrations (3.9.4) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/persistence/53eec6052c1f4b2466714041736b8ad40d81cb8d.zip from cache
+  - Loading doctrine/persistence (3.4.1) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/doctrine-bridge/9e833a6b4d37a91658b4d5e690574be03c56a439.zip from cache
+  - Loading symfony/doctrine-bridge (v7.3.4) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/sql-formatter/d9e00ac712d59b39851f805c432e2f904a1c30e8.zip from cache
+  - Loading doctrine/sql-formatter (1.5.2) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/doctrine-bundle/8b8639dd62281802fe6f47da37af25cefc0e9ab1.zip from cache
+  - Loading doctrine/doctrine-bundle (2.16.2) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/doctrine-migrations-bundle/805c0b6699c396e4ffbe0c5b6f7735719fffef79.zip from cache
+  - Loading doctrine/doctrine-migrations-bundle (3.4.2) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/lexer/16a5c8a6d88bc11d6da175a7b0ff18e504449819.zip from cache
+  - Loading doctrine/lexer (3.0.1) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/instantiator/48cd70ce44111f1be53796d18d263cd47da09a3f.zip from cache
+  - Loading doctrine/instantiator (2.0.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/inflector/656b3f4af0ba8dadbb18bcbf1e825741bfba578b.zip from cache
+  - Loading doctrine/inflector (2.1.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/common/fb63171037afed2391ed8666c6d1668618f98fba.zip from cache
+  - Loading doctrine/common (3.5.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/polyfill-php84/1eebbc8f410ace262224dc5bb5d3c2ab998a3d0f.zip from cache
+  - Loading symfony/polyfill-php84 (v1.33.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/collections/501bc580eb67e37d14a2ba775835a9f2aaf5eee7.zip from cache
+  - Loading doctrine/collections (2.3.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/cache/3d10cdf80c6a538fe80c85b81ed43c4c89c2e472.zip from cache
+  - Loading doctrine/cache (2.2.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/orm/f85609c237982daf0f2134378bbfb3487ad057f9.zip from cache
+  - Loading doctrine/orm (2.20.6) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/willdurand/negotiation/bc3258f38b86f2b29aca701bdd45e9b6da700dc3.zip from cache
+  - Loading willdurand/negotiation (3.1.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/willdurand/jsonp-callback-validator/cf84972ceff461b7114e386e2fa1b688de5d1856.zip from cache
+  - Loading willdurand/jsonp-callback-validator (v2.0.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/password-hasher/ade57f10ad46e4404c3729cbe47d542113239a40.zip from cache
+  - Loading symfony/password-hasher (v7.3.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/security-core/93011cd63ea7d5cd194675a4a7f7fd8b324cf37c.zip from cache
+  - Loading symfony/security-core (v7.3.4) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/friendsofsymfony/rest-bundle/934ce213bceccb0a81e0613859312540fec09184.zip from cache
+  - Loading friendsofsymfony/rest-bundle (3.8.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/paragonie/random_compat/65bef60142798f103b09e948c03c9a652c469254.zip from cache
+  - Loading paragonie/random_compat (v9.99.100) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/paragonie/constant_time_encoding/efe0fa395dd05ebe113baceffd79a017c9e91465.zip from cache
+  - Loading paragonie/constant_time_encoding (v3.1.3) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/phpseclib/phpseclib/8fa43046ce8e9854f4016fc9780c161c72383a41.zip from cache
+  - Loading phpseclib/phpseclib (3.0.46) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/monolog/monolog/18eb8fca7e373bf709d8c2ec0667962617410c29.zip from cache
+  - Loading monolog/monolog (3.9.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/ralouphie/getallheaders/ddc5f4c7ab3d868f5060717336a0d93475d53175.zip from cache
+  - Loading ralouphie/getallheaders (3.0.3) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/psr/http-message/e8baaf1c5537971c6192d7c56974d81e2ee099c3.zip from cache
+  - Loading psr/http-message (2.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/psr/http-factory/3dbec50111f2c1bcf13231bd100d8985d4495287.zip from cache
+  - Loading psr/http-factory (1.1.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/guzzlehttp/psr7/e90088ff16b84bf4c7735ee76ce62b62791ae1bc.zip from cache
+  - Loading guzzlehttp/psr7 (2.8.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/psr/http-client/8a0eb9bbf4ceddbff9fd328c582c07269c8888ab.zip from cache
+  - Loading psr/http-client (1.0.3) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/guzzlehttp/promises/e46877c9653dab04e20487e55171df4cc6885d70.zip from cache
+  - Loading guzzlehttp/promises (2.3.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/guzzlehttp/guzzle/952e1da8da12011e5943b77b8bd4d8394f3e0d2c.zip from cache
+  - Loading guzzlehttp/guzzle (7.10.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/firebase/php-jwt/4743b053d6271324abef4fd8bad304948bdc565e.zip from cache
+  - Loading firebase/php-jwt (v6.11.1) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/google/auth/edeb619360d45e77d3f66d921913137e8be0ddde.zip from cache
+  - Loading google/auth (v1.48.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/google/apiclient-services/9bde2aa6f3e0708a419c866e6d6c833c28e7ece5.zip from cache
+  - Loading google/apiclient-services (v0.414.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/google/apiclient/8594f0c91525f0b778ca354e785effcc472c995a.zip from cache
+  - Loading google/apiclient (v2.18.3) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/phpstan/phpdoc-parser/4f80b788e0a228dbadfcdf920bf7febc728d28d8.zip from cache
+  - Loading phpstan/phpdoc-parser (2.3.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/jms/metadata/5d29deaec9679a58668bb8ad5dca733f3f9d35f4.zip from cache
+  - Loading jms/metadata (2.8.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/jms/serializer/7ee8ff3a315e8df2172e9f7512b2fe7f84fc048a.zip from cache
+  - Loading jms/serializer (3.32.5) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/jms/serializer-bundle/c1b76c6b1c38460aede66901987b5081520fc4f5.zip from cache
+  - Loading jms/serializer-bundle (5.5.1) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/translation-contracts/2a9e081fd4637d1069db21761fcf387f804286bf.zip from cache
+  - Loading symfony/translation-contracts (v3.6.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/property-info/00f281e7cf321d65d8749af97a8959c5667ce709.zip from cache
+  - Loading symfony/property-info (v6.4.24) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/property-access/513ce74240357ae9c240fab2c5445aca375de719.zip from cache
+  - Loading symfony/property-access (v6.4.25) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/security-http/44f7ae67d74b77cc01259671279c69cbbbaa53db.zip from cache
+  - Loading symfony/security-http (v7.3.4) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/security-csrf/6e615d90be71c87ee7ea146145c43cf2856c7692.zip from cache
+  - Loading symfony/security-csrf (v7.3.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/psr/clock/82bf02e3a8f1b35169f8d27aa93a171ae387f779.zip from cache
+  - Loading psr/clock (1.0.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/clock/77aa8256837a7766b1ce8436c8e929a9af14379d.zip from cache
+  - Loading symfony/clock (v7.3.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/security-bundle/bbee0a964f3636813f8373632f46d0549a296559.zip from cache
+  - Loading symfony/security-bundle (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/namshi/jose/683deeaf54c343628096f506101b7f18bbdf696e.zip from cache
+  - Loading namshi/jose (7.2.3) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/lcobucci/jwt/697dbd8f55122efe6e12250ce6e9d19121ae51f0.zip from cache
+  - Loading lcobucci/jwt (5.5.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/lcobucci/clock/29e180f4b63069223b32e2b9c468c653daf3f8f9.zip from cache
+  - Loading lcobucci/clock (3.3.1) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/lexik/jwt-authentication-bundle/f7b51fb86185afe539b56a528c4b0f8a66812c9e.zip from cache
+  - Loading lexik/jwt-authentication-bundle (v2.21.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/yaml/bce3078bbe3dd3cee2c33be597b810f082c717ba.zip from cache
+  - Loading symfony/yaml (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/nikic/php-parser/ca1c75c4b1f472b7504b8e8b8c39e5847600950a.zip from cache
+  - Loading nikic/php-parser (v5.6.1) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/zircote/swagger-php/7dd2768bed79f9fc56fc44449fb2ccdc1e3bc0fc.zip from cache
+  - Loading zircote/swagger-php (5.4.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/options-resolver/df99f19f052a4483d000b02a5123f7b2a39faa13.zip from cache
+  - Loading symfony/options-resolver (v7.3.3) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/phpdocumentor/reflection-common/6243ab17e2330fb7ce63d34391d53104cc913dc0.zip from cache
+  - Loading phpdocumentor/reflection-common (2.2.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/phpdocumentor/type-resolver/cae3fcedc9a3df70d1c92d51fc8c1807b08ba4c7.zip from cache
+  - Loading phpdocumentor/type-resolver (1.10.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/webmozart/assert/b9bc0224905e92da07bc3de7d205f17c30035a88.zip from cache
+  - Loading webmozart/assert (1.11.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/phpdocumentor/reflection-docblock/3d3ce6e8ae8cdba47112e65224292655f0ca9370.zip from cache
+  - Loading phpdocumentor/reflection-docblock (5.6.3) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/nelmio/api-doc-bundle/bb7565cfbf9451b4c8c93a6a35f72e1cce1f0565.zip from cache
+  - Loading nelmio/api-doc-bundle (v4.38.2) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/psr/simple-cache/f30344b376a5fb0289c0491e8df6aba973ba12aa.zip from cache
+  - Loading psr/simple-cache (3.0.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/markbaker/matrix/11afbe908275178f5cc6c8809facdd5cf91c3129.zip from cache
+  - Loading markbaker/matrix (3.0.1) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/markbaker/complex/226f16ca1c306b24fbd213d92bfc2f490ccb9708.zip from cache
+  - Loading markbaker/complex (3.0.2) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/maennchen/zipstream-php/47f798bbd9ce9c091868d07cfcbc6fd9d260a23f.zip from cache
+  - Loading maennchen/zipstream-php (3.2.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/ezyang/htmlpurifier/43f73ef4687f67eb6bcc0c3e84e2f46a566e987e.zip from cache
+  - Loading ezyang/htmlpurifier (v4.18.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/composer/pcre/873727598c75b77a94d93c991da81eff2605482b.zip from cache
+  - Loading composer/pcre (3.3.2) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/phpoffice/phpspreadsheet/157fef49b5ce90048b93411dcd249df4b2f0fa17.zip from cache
+  - Loading phpoffice/phpspreadsheet (1.30.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/tecnickcom/tcpdf/2a74a011369c495fdf86fa1cc0e15c53006bb384.zip from cache
+  - Loading tecnickcom/tcpdf (6.10.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/qipsius/tcpdf-bundle/fcf5632c46add8d1f12f967370715433e1cb00a1.zip from cache
+  - Loading qipsius/tcpdf-bundle (2.0.3) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/doctrine/annotations/3a83d97022313733f66816f18e5e70e99703c5ba.zip from cache
+  - Loading doctrine/annotations (2.0.2) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/sensio/framework-extra-bundle/29a4049e53a4760279ae46a709aedd471168ca3c.zip from cache
+  - Loading sensio/framework-extra-bundle (v6.2.10) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/masterminds/html5/860bdda94b74d63a6016fa8ae41708229243ac8c.zip from cache
+  - Loading masterminds/html5 (2.10.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/dom-crawler/ea8935b23a20a7d2dbade108f3f7c071a69e3e8e.zip from cache
+  - Loading symfony/dom-crawler (v7.3.3) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/browser-kit/5da1ad200befe69a1feb12b8530e38db4b2b7130.zip from cache
+  - Loading symfony/browser-kit (v6.4.24) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/css-selector/9b69a9c2dd7f370c318de1ccc43b0952c5a104c4.zip from cache
+  - Loading symfony/css-selector (v6.4.24) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/twig/twig/7fb3f25f98214f493acef15d2f43219952337b26.zip from cache
+  - Loading twig/twig (v3.21.1) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/twig-bridge/846faffba560ea9c4f3f69b5734c1496d4012d2c.zip from cache
+  - Loading symfony/twig-bridge (v6.4.25) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/debug-bundle/19bc2c8353ed7feaa1db6487ccfe8ee0042b92b3.zip from cache
+  - Loading symfony/debug-bundle (v6.4.13) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/dotenv/cae14052451d6ac22d35b36ce1da7257c2743d54.zip from cache
+  - Loading symfony/dotenv (v6.4.24) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/expression-language/c13f1b152530cf1f7b8330af274f52eb9e33bbb8.zip from cache
+  - Loading symfony/expression-language (v6.4.24) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/polyfill-intl-icu/e148ebdf75228f2afc50f7685700b0264b0f813a.zip from cache
+  - Loading symfony/polyfill-intl-icu (v1.33.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/form/f149eb1b216db66ce748cf41e81c2cfac73e9fae.zip from cache
+  - Loading symfony/form (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/polyfill-intl-idn/805877f0ed53fba8b473f9cbf2fcb25da45ccc5f.zip from cache
+  - Loading symfony/polyfill-intl-idn (v1.33.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/mime/3ee0ccdea3d9900289c371fcf347eb6383b8b9f0.zip from cache
+  - Loading symfony/mime (v7.3.4) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/egulias/email-validator/2325f9b713443a41bdd9cae876fc640df65c0c85.zip from cache
+  - Loading egulias/email-validator (4.0.4) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/mailer/29b62f470f9fda11f989615fc4c2c5d68d6d67bd.zip from cache
+  - Loading symfony/mailer (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/google-mailer/4720bca3537251d08be7f43849485b24d696ea62.zip from cache
+  - Loading symfony/google-mailer (v6.4.13) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/http-client-contracts/a27e8ec9967f0714b94e22ab6c551a93fce4ac8e.zip from cache
+  - Loading symfony/http-client-contracts (v3.6.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/intl/00375402790188f8f26dc7bbc67ffcb5124683d1.zip from cache
+  - Loading symfony/intl (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/process/60175abb8c6d56fc85688b6663379645a0eb27e7.zip from cache
+  - Loading symfony/process (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/maker-bundle/726bdf26cc4f260d68a7fa3fc16c759bbdcd52e3.zip from cache
+  - Loading symfony/maker-bundle (v1.64.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/monolog-bridge/a0f80be8921c0aaa7c1f312e12217b65e7f81f4a.zip from cache
+  - Loading symfony/monolog-bridge (v7.3.4) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/monolog-bundle/0def1200a3ce3ce7b36e41b1d33f17407939fe39.zip from cache
+  - Loading symfony/monolog-bundle (v3.10.0) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/phpunit-bridge/ebf91bc38148768508cfbc0aa0bdf2f8a57639cf.zip from cache
+  - Loading symfony/phpunit-bridge (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/serializer/9eb169bc61958759d248c1b11f58885c6c7c82f4.zip from cache
+  - Loading symfony/serializer (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/translation/8baff5cb2427e82bd22927afb34aa1c18b8680c6.zip from cache
+  - Loading symfony/translation (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/notifier/9734005627eb10abc066356f039ca547799bb830.zip from cache
+  - Loading symfony/notifier (v7.3.3) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/http-client/3568618591b9b3047e95000b08a714aefa4661bd.zip from cache
+  - Loading symfony/http-client (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/twilio-notifier/ca33dc9c20c22cea6e51734e8044331645c517cc.zip from cache
+  - Loading symfony/twilio-notifier (v6.4.24) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/validator/ef4271a78f7338735ac56546641a1c3a9400c80d.zip from cache
+  - Loading symfony/validator (v6.4.26) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/psr/link/1f39b42188fc50bf95c94f4eb2febc21f2610611.zip from cache
+  - Loading psr/link (2.0.1) from cache
+Reading /Users/renatochea/Library/Caches/composer/files/symfony/web-link/e7ce4a71081e2f6db033768acd75315f0037bf2d.zip from cache
+  - Loading symfony/web-link (v6.4.24) from cache
+  - Downloading symfony/twig-bundle (v6.4.24)
+Downloading https://api.github.com/repos/symfony/twig-bundle/zipball/3b48b6e8225495c6d2438828982b4d219ca565ba
+  - Downloading symfony/web-profiler-bundle (v6.4.25)
+Downloading https://api.github.com/repos/symfony/web-profiler-bundle/zipball/4c1754d6b3ffe52e9eaed0d9a392eb43a60fc910
+  - Downloading symfony/asset (v6.4.24)
+Downloading https://api.github.com/repos/symfony/asset/zipball/cfee7c0d64be113383db74a2fdd65d426b7f3aab
+  - Downloading symfony/webpack-encore-bundle (v2.3.0)
+Downloading https://api.github.com/repos/symfony/webpack-encore-bundle/zipball/7ae70d44c24c3b913f308af8396169b5c6d9e0f5
+  - Downloading symfony/webpack-encore-pack (v1.0.2)
+Downloading https://api.github.com/repos/symfony/webpack-encore-pack/zipball/f9f4e91659e5f55de370d6aebe77e64bce35e4d3
+  - Downloading symfonycasts/reset-password-bundle (v1.23.2)
+Downloading https://api.github.com/repos/SymfonyCasts/reset-password-bundle/zipball/beff941f4d7f8ad7fbd32e482e13acbcefa0dde4
+  - Downloading symplify/config-transformer (12.4.3)
+Downloading https://api.github.com/repos/symplify/config-transformer/zipball/e984565722243ad6078aafe92f56c1770f96055b
+  - Downloading twig/extra-bundle (v3.21.0)
+Downloading https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/62d1cf47a1aa009cbd07b21045b97d3d5cb79896
+  - Downloading twilio/sdk (8.8.2)
+Downloading https://api.github.com/repos/twilio/twilio-php/zipball/9f646ca53a4645ed6f2117616b8a1b8a29149ce0
+[302] https://api.github.com/repos/symfony/twig-bundle/zipball/3b48b6e8225495c6d2438828982b4d219ca565ba
+Following redirect (1) https://codeload.github.com/symfony/twig-bundle/legacy.zip/3b48b6e8225495c6d2438828982b4d219ca565ba
+[302] https://api.github.com/repos/twilio/twilio-php/zipball/9f646ca53a4645ed6f2117616b8a1b8a29149ce0
+Following redirect (1) https://codeload.github.com/twilio/twilio-php/legacy.zip/9f646ca53a4645ed6f2117616b8a1b8a29149ce0
+[302] https://api.github.com/repos/symfony/web-profiler-bundle/zipball/4c1754d6b3ffe52e9eaed0d9a392eb43a60fc910
+Following redirect (1) https://codeload.github.com/symfony/web-profiler-bundle/legacy.zip/4c1754d6b3ffe52e9eaed0d9a392eb43a60fc910
+[302] https://api.github.com/repos/symfony/asset/zipball/cfee7c0d64be113383db74a2fdd65d426b7f3aab
+Following redirect (1) https://codeload.github.com/symfony/asset/legacy.zip/cfee7c0d64be113383db74a2fdd65d426b7f3aab
+[302] https://api.github.com/repos/symfony/webpack-encore-bundle/zipball/7ae70d44c24c3b913f308af8396169b5c6d9e0f5
+Following redirect (1) https://codeload.github.com/symfony/webpack-encore-bundle/legacy.zip/7ae70d44c24c3b913f308af8396169b5c6d9e0f5
+[302] https://api.github.com/repos/SymfonyCasts/reset-password-bundle/zipball/beff941f4d7f8ad7fbd32e482e13acbcefa0dde4
+Following redirect (1) https://codeload.github.com/SymfonyCasts/reset-password-bundle/legacy.zip/beff941f4d7f8ad7fbd32e482e13acbcefa0dde4
+[404] https://api.github.com/repos/symfony/webpack-encore-pack/zipball/f9f4e91659e5f55de370d6aebe77e64bce35e4d3
+    Failed to download symfony/webpack-encore-pack from dist: The "https://api.github.com/repos/symfony/webpack-encore-pack/zipball/f9f4e91659e5f55de370d6aebe77e64bce35e4d3" file could not be downloaded (HTTP/2 404 ):
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/contents#download-a-repository-archive-zip","status":"404"}
+    Now trying to download from source
+  - Syncing symfony/webpack-encore-pack (v1.0.2) into cache
+    Cloning to cache at /Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-encore-pack.git/
+Executing command (CWD): 'git' 'clone' '--mirror' '--' 'https://github.com/symfony/webpack-encore-pack.git' '/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-encore-pack.git/'
+Executing command (CWD): 'git' 'clone' '--mirror' '--' 'git@github.com:symfony/webpack-encore-pack.git' '/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-encore-pack.git/'
+Executing command (CWD): 'git' 'clone' '--mirror' '--' 'https://github.com/symfony/webpack-encore-pack.git' '/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-encore-pack.git/'
+Executing command (CWD): 'git' 'config' 'github.accesstoken'
+Cloning failed using an ssh key for authentication, enter your GitHub credentials to access private repos
+Executing command (CWD): 'hostname'
+When working with _public_ GitHub repositories only, head here to retrieve a token:
+https://github.com/settings/tokens/new?scopes=&description=Composer+on+Renatos-MacBook-Pro.local+2025-09-29+1522
+This token will have read-only permission for public information only.
+When you need to access _private_ GitHub repositories as well, go to:
+https://github.com/settings/tokens/new?scopes=repo&description=Composer+on+Renatos-MacBook-Pro.local+2025-09-29+1522
+Note that such tokens have broad read/write permissions on your behalf, even if not needed by Composer.
+Tokens will be stored in plain text in "/Users/renatochea/.composer/auth.json" for future use by Composer.
+For additional information, check https://getcomposer.org/doc/articles/authentication-for-private-packages.md#github-oauth
+Token (hidden): 
+No token given, aborting.
+You can also add it manually later by using "composer config --global --auth github-oauth.github.com <token>"
+Executing command (CWD): 'git' '--version'
+Failed: [RuntimeException] Failed to execute git clone --mirror -- https://github.com/symfony/webpack-encore-pack.git /Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-encore-pack.git/
+
+Cloning into bare repository '/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-encore-pack.git'...
+remote: Repository not found.
+fatal: repository 'https://github.com/symfony/webpack-encore-pack.git/' not found
+
+A connection timeout was encountered. If you intend to run Composer without connecting to the internet, run the command again prefixed with COMPOSER_DISABLE_NETWORK=1 to make Composer run in offline mode.
+    Failed to download symfony/twig-bundle from dist: curl error 28 while downloading https://codeload.github.com/symfony/twig-bundle/legacy.zip/3b48b6e8225495c6d2438828982b4d219ca565ba: Resolving timed out after 36925 milliseconds
+    Now trying to download from source
+  - Syncing symfony/twig-bundle (v6.4.24) into cache
+    Cloning to cache at /Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-twig-bundle.git/
+Executing command (CWD): 'git' 'clone' '--mirror' '--' 'https://github.com/symfony/twig-bundle.git' '/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-twig-bundle.git/'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-twig-bundle.git/): 'git' 'rev-parse' '--git-dir'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-twig-bundle.git/): 'git' 'rev-parse' '--quiet' '--verify' '3b48b6e8225495c6d2438828982b4d219ca565ba^{commit}'
+    Failed to download twilio/sdk from dist: curl error 28 while downloading https://codeload.github.com/twilio/twilio-php/legacy.zip/9f646ca53a4645ed6f2117616b8a1b8a29149ce0: Resolving timed out after 36923 milliseconds
+    Now trying to download from source
+  - Syncing twilio/sdk (8.8.2) into cache
+    Cloning to cache at /Users/renatochea/Library/Caches/composer/vcs/https---github.com-twilio-twilio-php/
+Executing command (CWD): 'git' 'clone' '--mirror' '--' 'https://github.com/twilio/twilio-php' '/Users/renatochea/Library/Caches/composer/vcs/https---github.com-twilio-twilio-php/'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-twilio-twilio-php/): 'git' 'rev-parse' '--git-dir'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-twilio-twilio-php/): 'git' 'rev-parse' '--quiet' '--verify' '9f646ca53a4645ed6f2117616b8a1b8a29149ce0^{commit}'
+    Failed to download symfony/web-profiler-bundle from dist: curl error 28 while downloading https://codeload.github.com/symfony/web-profiler-bundle/legacy.zip/4c1754d6b3ffe52e9eaed0d9a392eb43a60fc910: Resolving timed out after 36920 milliseconds
+    Now trying to download from source
+  - Syncing symfony/web-profiler-bundle (v6.4.25) into cache
+    Cloning to cache at /Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-web-profiler-bundle.git/
+Executing command (CWD): 'git' 'clone' '--mirror' '--' 'https://github.com/symfony/web-profiler-bundle.git' '/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-web-profiler-bundle.git/'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-web-profiler-bundle.git/): 'git' 'rev-parse' '--git-dir'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-web-profiler-bundle.git/): 'git' 'rev-parse' '--quiet' '--verify' '4c1754d6b3ffe52e9eaed0d9a392eb43a60fc910^{commit}'
+    Failed to download symfony/asset from dist: curl error 28 while downloading https://codeload.github.com/symfony/asset/legacy.zip/cfee7c0d64be113383db74a2fdd65d426b7f3aab: Resolving timed out after 36911 milliseconds
+    Now trying to download from source
+  - Syncing symfony/asset (v6.4.24) into cache
+    Cloning to cache at /Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-asset.git/
+Executing command (CWD): 'git' 'clone' '--mirror' '--' 'https://github.com/symfony/asset.git' '/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-asset.git/'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-asset.git/): 'git' 'rev-parse' '--git-dir'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-asset.git/): 'git' 'rev-parse' '--quiet' '--verify' 'cfee7c0d64be113383db74a2fdd65d426b7f3aab^{commit}'
+    Failed to download symfony/webpack-encore-bundle from dist: curl error 28 while downloading https://codeload.github.com/symfony/webpack-encore-bundle/legacy.zip/7ae70d44c24c3b913f308af8396169b5c6d9e0f5: Resolving timed out after 36901 milliseconds
+    Now trying to download from source
+  - Syncing symfony/webpack-encore-bundle (v2.3.0) into cache
+    Cloning to cache at /Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-encore-bundle.git/
+Executing command (CWD): 'git' 'clone' '--mirror' '--' 'https://github.com/symfony/webpack-encore-bundle.git' '/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-encore-bundle.git/'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-encore-bundle.git/): 'git' 'rev-parse' '--git-dir'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-encore-bundle.git/): 'git' 'rev-parse' '--quiet' '--verify' '7ae70d44c24c3b913f308af8396169b5c6d9e0f5^{commit}'
+    Failed to download symfonycasts/reset-password-bundle from dist: curl error 28 while downloading https://codeload.github.com/SymfonyCasts/reset-password-bundle/legacy.zip/beff941f4d7f8ad7fbd32e482e13acbcefa0dde4: Resolving timed out after 36869 milliseconds
+    Now trying to download from source
+  - Syncing symfonycasts/reset-password-bundle (v1.23.2) into cache
+    Cloning to cache at /Users/renatochea/Library/Caches/composer/vcs/https---github.com-SymfonyCasts-reset-password-bundle.git/
+Executing command (CWD): 'git' 'clone' '--mirror' '--' 'https://github.com/SymfonyCasts/reset-password-bundle.git' '/Users/renatochea/Library/Caches/composer/vcs/https---github.com-SymfonyCasts-reset-password-bundle.git/'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-SymfonyCasts-reset-password-bundle.git/): 'git' 'rev-parse' '--git-dir'
+Executing command (/Users/renatochea/Library/Caches/composer/vcs/https---github.com-SymfonyCasts-reset-password-bundle.git/): 'git' 'rev-parse' '--quiet' '--verify' 'beff941f4d7f8ad7fbd32e482e13acbcefa0dde4^{commit}'
+[302] https://api.github.com/repos/symplify/config-transformer/zipball/e984565722243ad6078aafe92f56c1770f96055b
+Following redirect (1) https://codeload.github.com/symplify/config-transformer/legacy.zip/e984565722243ad6078aafe92f56c1770f96055b
+[302] https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/62d1cf47a1aa009cbd07b21045b97d3d5cb79896
+Following redirect (1) https://codeload.github.com/twigphp/twig-extra-bundle/legacy.zip/62d1cf47a1aa009cbd07b21045b97d3d5cb79896
+[200] https://codeload.github.com/twigphp/twig-extra-bundle/legacy.zip/62d1cf47a1aa009cbd07b21045b97d3d5cb79896
+Writing /Users/renatochea/Library/Caches/composer/files/twig/extra-bundle/802ab62ccd1c19305a3ab88ec7d7c5b987f79a92.zip into cache from /Applications/MAMP/htdocs/mayaexpress/work_process_new/vendor/composer/tmp-aaceaa026ce1d8071729bdfd5bdcb068.zip
+[200] https://codeload.github.com/symplify/config-transformer/legacy.zip/e984565722243ad6078aafe92f56c1770f96055b
+Writing /Users/renatochea/Library/Caches/composer/files/symplify/config-transformer/ad1a5fd2ce78c1edfd300e557ab7ce513b79dc6c.zip into cache from /Applications/MAMP/htdocs/mayaexpress/work_process_new/vendor/composer/tmp-034ab5b10b74dec7575d04804fd0a58b.zip
+
+In Git.php line 602:
+                                                                                                                                                                                    
+  [RuntimeException]                                                                                                                                                                
+  Failed to execute git clone --mirror -- https://github.com/symfony/webpack-encore-pack.git /Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-enco  
+  re-pack.git/                                                                                                                                                                      
+                                                                                                                                                                                    
+  Cloning into bare repository '/Users/renatochea/Library/Caches/composer/vcs/https---github.com-symfony-webpack-encore-pack.git'...                                                
+  remote: Repository not found.                                                                                                                                                     
+  fatal: repository 'https://github.com/symfony/webpack-encore-pack.git/' not found                                                                                                 
+                                                                                                                                                                                    
+
+Exception trace:
+  at phar:///usr/local/bin/composer/src/Composer/Util/Git.php:602
+ Composer\Util\Git->throwException() at phar:///usr/local/bin/composer/src/Composer/Util/Git.php:369
+ Composer\Util\Git->runCommand() at phar:///usr/local/bin/composer/src/Composer/Util/Git.php:94
+ Composer\Util\Git->runCommands() at phar:///usr/local/bin/composer/src/Composer/Util/Git.php:405
+ Composer\Util\Git->syncMirror() at phar:///usr/local/bin/composer/src/Composer/Util/Git.php:438
+ Composer\Util\Git->fetchRefOrSyncMirror() at phar:///usr/local/bin/composer/src/Composer/Downloader/GitDownloader.php:78
+ Composer\Downloader\GitDownloader->doDownload() at phar:///usr/local/bin/composer/src/Composer/Downloader/VcsDownloader.php:73
+ Composer\Downloader\VcsDownloader->download() at phar:///usr/local/bin/composer/src/Composer/Downloader/DownloadManager.php:223
+ Composer\Downloader\DownloadManager->Composer\Downloader\{closure}() at phar:///usr/local/bin/composer/src/Composer/Downloader/DownloadManager.php:216
+ Composer\Downloader\DownloadManager::Composer\Downloader\{closure}() at phar:///usr/local/bin/composer/vendor/react/promise/src/Internal/RejectedPromise.php:73
+ React\Promise\Internal\RejectedPromise->then() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:174
+ React\Promise\Promise::React\Promise\{closure}() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:222
+ React\Promise\Promise->settle() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:193
+ React\Promise\Promise->reject() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:293
+ React\Promise\Promise::React\Promise\{closure}() at phar:///usr/local/bin/composer/vendor/react/promise/src/Internal/RejectedPromise.php:73
+ React\Promise\Internal\RejectedPromise->then() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:181
+ React\Promise\Promise::React\Promise\{closure}() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:222
+ React\Promise\Promise->settle() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:193
+ React\Promise\Promise->reject() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:293
+ React\Promise\Promise::React\Promise\{closure}() at phar:///usr/local/bin/composer/vendor/react/promise/src/Internal/RejectedPromise.php:73
+ React\Promise\Internal\RejectedPromise->then() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:181
+ React\Promise\Promise::React\Promise\{closure}() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:222
+ React\Promise\Promise->settle() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:193
+ React\Promise\Promise->reject() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:293
+ React\Promise\Promise::React\Promise\{closure}() at phar:///usr/local/bin/composer/vendor/react/promise/src/Internal/RejectedPromise.php:73
+ React\Promise\Internal\RejectedPromise->then() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:181
+ React\Promise\Promise::React\Promise\{closure}() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:222
+ React\Promise\Promise->settle() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:193
+ React\Promise\Promise->reject() at phar:///usr/local/bin/composer/vendor/react/promise/src/Promise.php:293
+ React\Promise\Promise::React\Promise\{closure}() at phar:///usr/local/bin/composer/src/Composer/Util/Http/CurlDownloader.php:681
+ Composer\Util\Http\CurlDownloader->rejectJob() at phar:///usr/local/bin/composer/src/Composer/Util/Http/CurlDownloader.php:490
+ Composer\Util\Http\CurlDownloader->tick() at phar:///usr/local/bin/composer/src/Composer/Util/HttpDownloader.php:392
+ Composer\Util\HttpDownloader->countActiveJobs() at phar:///usr/local/bin/composer/src/Composer/Util/Loop.php:88
+ Composer\Util\Loop->wait() at phar:///usr/local/bin/composer/src/Composer/Installer/InstallationManager.php:433
+ Composer\Installer\InstallationManager->waitOnPromises() at phar:///usr/local/bin/composer/src/Composer/Installer/InstallationManager.php:289
+ Composer\Installer\InstallationManager->downloadAndExecuteBatch() at phar:///usr/local/bin/composer/src/Composer/Installer/InstallationManager.php:221
+ Composer\Installer\InstallationManager->execute() at phar:///usr/local/bin/composer/src/Composer/Installer.php:839
+ Composer\Installer->doInstall() at phar:///usr/local/bin/composer/src/Composer/Installer.php:300
+ Composer\Installer->run() at phar:///usr/local/bin/composer/src/Composer/Command/InstallCommand.php:147
+ Composer\Command\InstallCommand->execute() at phar:///usr/local/bin/composer/vendor/symfony/console/Command/Command.php:298
+ Symfony\Component\Console\Command\Command->run() at phar:///usr/local/bin/composer/vendor/symfony/console/Application.php:1040
+ Symfony\Component\Console\Application->doRunCommand() at phar:///usr/local/bin/composer/vendor/symfony/console/Application.php:301
+ Symfony\Component\Console\Application->doRun() at phar:///usr/local/bin/composer/src/Composer/Console/Application.php:400
+ Composer\Console\Application->doRun() at phar:///usr/local/bin/composer/vendor/symfony/console/Application.php:171
+ Symfony\Component\Console\Application->run() at phar:///usr/local/bin/composer/src/Composer/Console/Application.php:137
+ Composer\Console\Application->run() at phar:///usr/local/bin/composer/bin/composer:98
+ require() at /usr/local/bin/composer:29
+
+install [--prefer-source] [--prefer-dist] [--prefer-install PREFER-INSTALL] [--dry-run] [--download-only] [--dev] [--no-suggest] [--no-dev] [--no-autoloader] [--no-progress] [--no-install] [--audit] [--audit-format AUDIT-FORMAT] [-v|vv|vvv|--verbose] [-o|--optimize-autoloader] [-a|--classmap-authoritative] [--apcu-autoloader] [--apcu-autoloader-prefix APCU-AUTOLOADER-PREFIX] [--ignore-platform-req IGNORE-PLATFORM-REQ] [--ignore-platform-reqs] [--] [<packages>...]
+
